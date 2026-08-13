@@ -1,0 +1,16 @@
+# 虚拟环境
+.venv/
+
+# 环境变量(含密钥,不要提交)
+.env
+instance/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+.DS_Store

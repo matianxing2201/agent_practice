@@ -1,0 +1,6 @@
+# langchain-openai 1.4.3 要求 openai<3.0.0,上限约束防止解析冲突
+openai>=2.45.0,<3.0.0
+langchain>=1.0.0
+langchain-openai>=1.0.0
+python-dotenv>=1.0.0
+flask>=3.0.0
