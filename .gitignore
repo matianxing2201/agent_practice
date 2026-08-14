@@ -5,6 +5,9 @@
 .env
 instance/
 
+# RAG 知识库文档(根目录数据,病历等私有数据,不入 git)
+/knowledge_base/
+
 # Python 缓存
 __pycache__/
 *.py[cod]
