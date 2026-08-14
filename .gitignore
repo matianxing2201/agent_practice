@@ -8,6 +8,9 @@ instance/
 # RAG 知识库文档(根目录数据,病历等私有数据,不入 git)
 /knowledge_base/
 
+# 文档(spec 等,不随代码进 git)
+docs/
+
 # Python 缓存
 __pycache__/
 *.py[cod]
