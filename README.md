@@ -31,17 +31,7 @@ agent_practice/
 │       └── rag/             # 学习主题:RAG(只做蓝图容器)
 │           ├── __init__.py  # Blueprint 定义(url_prefix=/rag)
 │           ├── knowledge_base/ # 知识库管理模块(数据资产管理层)
-│           │   ├── __init__.py    # 模块说明
-│           │   ├── controllers.py # Controller:HTTP 路由(/rag/knowledge/*)
-│           │   ├── services.py    # Service:分割/向量化/编排
-│           │   └── milvus_store.py# Milvus 数据访问(增删改查)
-│           └── naive_rag/      # 方案:RAG 变种每个一个子目录(方案内分层)
-│               ├── __init__.py    # 方案总览:三段式流程说明
-│               ├── controllers.py # Controller 层:HTTP 路由(/rag/naive/*)
-│               ├── services.py    # Service 层:业务编排
-│               ├── indexing.py    # 阶段1 索引:文档->切分->向量化->Milvus
-│               ├── retrieval.py   # 阶段2 检索:问题->Milvus 相似度搜索
-│               └── generation.py  # 阶段3 生成:prompt 组装->LLM 回答
+│           └── naive_rag/   # RAG 方案(每个方案一个子目录)
 ```
 
 > 配置统一在根目录 `config.py` 管理(模型/凭据/Milvus/collection/索引检索参数)。
