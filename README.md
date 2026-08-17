@@ -1,63 +1,283 @@
-# Agent Practice
+# 🤖 Agent Practice
 
-AI Agent 练习项目。采用 Flask 应用工厂 + 按主题分目录的蓝图架构,每个学习主题内部按 controller / service 两层分层。
+AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，从零实现 RAG（检索增强生成）全链路，覆盖索引、检索、生成三个阶段，支持流式 SSE 输出。
 
-## 启动
+[![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-3.x-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![Milvus](https://img.shields.io/badge/Milvus-2.x-00A1E0?logo=milvus&logoColor=white)](https://milvus.io/)
 
-```bash
-source .venv/bin/activate
-cp .env.example .env    # 首次:填入 SECRET_KEY / OPENAI_API_KEY
+---
 
-flask run               # flask 命令自动检测 wsgi.py,零参数启动
+## 📋 项目简介
+
+本项目是一个 **AI Agent 学习实践平台**，采用模块化架构设计，每个学习主题（如 RAG）作为独立蓝图，内部按 Controller / Service 两层分层。
+
+### 核心特性
+
+- 🏗️ **应用工厂模式**：Flask 应用工厂 + 蓝图注册，支持多主题扩展
+- 🔍 **RAG 全链路**：索引 → 检索 → 生成，完整实现检索增强生成
+- ⚡ **流式输出**：基于 SSE（Server-Sent Events）的流式响应，逐字输出
+- 🧩 **模块化设计**：每个 RAG 方案独立目录，互不干扰
+- 🧪 **测试覆盖**：HTTP seam 测试，mock 外部依赖
+
+### 技术栈
+
+| 组件 | 技术 | 用途 |
+|------|------|------|
+| Web 框架 | Flask 3.x | HTTP 服务、蓝图路由 |
+| 向量数据库 | Milvus 2.x | 向量存储与相似度检索 |
+| Embedding | 智谱 embedding-3 | 文本向量化（2048 维） |
+| LLM | DeepSeek v4 Flash | 对话生成（OpenAI 兼容接口） |
+| 测试 | pytest | HTTP seam 测试 |
+
+---
+
+## 🗺️ 学习路线
+
+本项目按 RAG（检索增强生成）的三个标准阶段组织学习内容：
+
+| 阶段 | 模块 | 核心概念 | 实现文件 |
+|------|------|----------|----------|
+| **Indexing（索引）** | knowledge_base | 文档切分、向量化、Milvus 写入 | `knowledge_base/` |
+| **Retrieval（检索）** | naive_rag | 问题向量化、相似度检索、top_k | `retrieval.py` |
+| **Generation（生成）** | naive_rag | prompt 组装、LLM 调用、流式输出 | `generation.py` |
+
+### 知识库管理（knowledge_base）
+
+独立于具体 RAG 方案的数据管理层，提供完整 CRUD：
+
+| 接口 | 方法 | 功能 |
+|------|------|------|
+| `/rag/knowledge/upload` | POST | 上传 `.txt` 文件批量导入 |
+| `/rag/knowledge` | POST | 手动输入单条记录 |
+| `/rag/knowledge` | GET | 分页列表 |
+| `/rag/knowledge/<id>` | GET | 单条详情 |
+| `/rag/knowledge/<id>` | PUT | 更新记录（自动重新向量化） |
+| `/rag/knowledge/<id>` | DELETE | 删除记录 |
+
+### Naive RAG 方案
+
+最基础的 RAG 实现，专注于**检索 + 生成**：
+
+| 接口 | 方法 | 功能 |
+|------|------|------|
+| `/rag/naive/query` | POST | 提问，触发检索 + 流式生成 |
+
+**SSE 事件格式：**
+
+```
+data: {"type": "sources", "sources": [{"text": "...", "score": 0.9}]}
+
+data: {"type": "delta", "content": "你"}
+
+data: {"type": "delta", "content": "好"}
+
+data: {"type": "done"}
 ```
 
-启动后访问 <http://127.0.0.1:5000/rag/> 验证。
+---
 
-## 目录结构
+## 🏛️ 架构设计
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                      Flask Application                       │
+├─────────────────────────────────────────────────────────────┤
+│  ┌─────────────────┐  ┌─────────────────┐  ┌──────────────┐ │
+│  │   knowledge_base │  │    naive_rag    │  │   (future)   │ │
+│  │   (数据管理者)   │  │   (数据使用者)  │  │   (其他方案)  │ │
+│  ├─────────────────┤  ├─────────────────┤  ├──────────────┤ │
+│  │ controllers.py  │  │ controllers.py  │  │    ...       │ │
+│  │ services.py     │  │ services.py     │  │              │ │
+│  │ milvus_store.py │  │ retrieval.py    │  │              │ │
+│  │                 │  │ generation.py   │  │              │ │
+│  └────────┬────────┘  └────────┬────────┘  └──────────────┘ │
+│           │                    │                             │
+│           └────────┬───────────┘                             │
+│                    ▼                                         │
+│           ┌─────────────────┐                               │
+│           │   config.py     │                               │
+│           │ (统一配置管理)  │                               │
+│           └─────────────────┘                               │
+└─────────────────────────────────────────────────────────────┘
+                          │
+                          ▼
+              ┌───────────────────────┐
+              │      Milvus          │
+              │  (向量数据库)         │
+              └───────────────────────┘
+```
+
+### 分层职责
+
+| 层 | 职责 | 说明 |
+|----|------|------|
+| **Controller** | 请求/响应处理 | 解析参数、调用 Service、返回 JSON |
+| **Service** | 业务编排 | 组织检索、生成等业务流程 |
+| **Store** | 数据访问 | Milvus CRUD（仅 knowledge_base） |
+
+### 数据流
+
+```
+用户提问
+    │
+    ▼
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│  Retrieval  │───▶│  Generation │───▶│  SSE 流式   │
+│  (检索)     │    │  (生成)     │    │  输出       │
+└─────────────┘    └─────────────┘    └─────────────┘
+       │                  │
+       ▼                  ▼
+┌─────────────┐    ┌─────────────┐
+│   Milvus    │    │   LLM API   │
+│  (向量库)   │    │  (DeepSeek) │
+└─────────────┘    └─────────────┘
+```
+
+---
+
+## 🚀 快速开始
+
+### 环境要求
+
+- Python 3.13+
+- Docker（运行 Milvus）
+- 智谱 API Key（Embedding 服务）
+
+### 1. 克隆项目
+
+```bash
+git clone git@github.com:matianxing2201/agent_practice.git
+cd agent_practice
+```
+
+### 2. 安装依赖
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+### 3. 配置环境变量
+
+```bash
+cp .env.example .env
+# 编辑 .env，填入你的配置：
+# - EMBEDDING_API_KEY: 智谱 API Key
+# - TOP_K: 检索返回的片段数量（默认 3）
+```
+
+### 4. 启动 Milvus
+
+```bash
+# 使用 Docker Compose 启动 Milvus
+docker-compose up -d
+```
+
+### 5. 启动应用
+
+```bash
+flask run
+```
+
+访问 http://127.0.0.1:5000/ 验证。
+
+---
+
+## 📁 目录结构
 
 ```
 agent_practice/
-├── wsgi.py                  # 入口:app = create_app()(flask/gunicorn 通用)
-├── config.py                # 配置层:Config 类继承 + .env 读取
-├── .flaskenv                # Flask CLI 配置(FLASK_APP/FLASK_DEBUG,提交 git)
-├── .env                     # 密钥(不入 git)
-├── knowledge_base/          # RAG 知识库文档(病历等私有数据,不入 git)
-├── docs/specs/              # 需求规格文档
-├── tests/                   # pytest 测试(HTTP seam)
-├── app/
-│   ├── __init__.py          # 应用工厂 create_app():加载配置 + 注册蓝图
-│   └── blueprints/
-│       ├── __init__.py      # 蓝图注册器:新增主题在此加一行注册
-│       └── rag/             # 学习主题:RAG(只做蓝图容器)
-│           ├── __init__.py  # Blueprint 定义(url_prefix=/rag)
-│           ├── knowledge_base/ # 知识库管理模块(数据资产管理层)
-│           └── naive_rag/   # RAG 方案(每个方案一个子目录)
+├── wsgi.py                  # 入口: app = create_app()
+├── config.py                # 配置层: Config 类 + .env 读取
+├── .flaskenv                # Flask CLI 配置
+├── .env                     # 密钥（不入 git）
+├── requirements.txt         # Python 依赖
+├── knowledge_base/          # RAG 知识库文档（不入 git）
+├── tests/                   # pytest 测试
+│   ├── conftest.py          # 测试 fixtures
+│   ├── test_knowledge_crud.py
+│   └── test_naive_rag.py
+└── app/
+    ├── __init__.py          # 应用工厂 create_app()
+    └── blueprints/
+        ├── __init__.py      # 蓝图注册器
+        └── rag/             # RAG 学习主题
+            ├── __init__.py  # Blueprint 定义 (url_prefix=/rag)
+            ├── knowledge_base/  # 知识库管理模块
+            │   ├── controllers.py
+            │   ├── services.py
+            │   └── milvus_store.py
+            └── naive_rag/   # Naive RAG 方案
+                ├── controllers.py
+                ├── services.py
+                ├── retrieval.py
+                └── generation.py
 ```
 
-> 配置统一在根目录 `config.py` 管理(模型/凭据/Milvus/collection/索引检索参数)。
-> 新增 RAG 方案时:复制 `naive_rag/` 目录(不含 config,因为没有),并在
-> `config.py` 的 `RAG_SCHEMES` 里加一个条目指定新 collection 名。
+---
 
-## 新增学习主题的步骤(互相解耦)
+## 🧪 测试
 
-1. 复制 `app/blueprints/rag/` 为 `app/blueprints/<topic>/`,改目录内 `__init__.py` 的 Blueprint 名和 `url_prefix`
-2. 在 `app/blueprints/__init__.py` 的 `register_blueprints()` 里加一行 import + register
-3. 完事——现有代码零改动
+```bash
+# 运行所有测试
+pytest tests/ -v
 
-各层职责(在每个 RAG 方案目录内):
+# 运行特定测试
+pytest tests/test_naive_rag.py -v
+```
 
-| 层 | 文件 | 职责 |
-|---|---|---|
-| Controller | `controllers.py` | 只管请求/响应,不写业务 |
-| Service | `services.py` | 业务编排,含数据访问 |
-| 阶段实现 | `indexing/retrieval/generation.py` | Naive RAG 三个阶段的实现 |
-| Config | `config.py` | 环境配置 |
+测试使用 mock 替换外部依赖（Embedding API、Milvus），无需真实 API Key 即可运行。
 
-> 数据访问并入 Service/阶段实现:逻辑简单时不需要单独拆层;等出现多处重复的数据代码或需要切换数据源时,再从 Service 中拆出独立的数据访问模块。
+---
 
-## 命名规范(PEP 8)
+## 🔧 配置说明
 
-- 包/模块:全小写 snake_case(`blueprints/rag/`)
-- 类:CapWords(`DevelopmentConfig`)
-- 函数/变量:snake_case(`answer_question`)
-- 常量:全大写(`OPENAI_API_KEY`)
+所有配置统一在 `config.py` 管理，敏感信息从 `.env` 读取：
+
+| 配置项 | 说明 | 默认值 |
+|--------|------|--------|
+| `EMBEDDING_API_KEY` | 智谱 API Key | - |
+| `EMBEDDING_MODEL` | Embedding 模型 | `embedding-3` |
+| `EMBEDDING_DIM` | 向量维度 | `2048` |
+| `CHAT_API_KEY` | LLM API Key | `opencode-zen` |
+| `CHAT_MODEL` | LLM 模型 | `deepseek-v4-flash` |
+| `MILVUS_HOST` | Milvus 地址 | `127.0.0.1` |
+| `MILVUS_PORT` | Milvus 端口 | `19530` |
+| `TOP_K` | 检索返回数量 | `3` |
+| `CHUNK_SIZE` | 文本切分大小 | `500` |
+| `CHUNK_OVERLAP` | 切分重叠 | `50` |
+
+---
+
+## 📚 扩展指南
+
+### 新增 RAG 方案
+
+1. 复制 `naive_rag/` 目录为新方案目录
+2. 修改 `__init__.py` 的 Blueprint 名和 `url_prefix`
+3. 在 `config.py` 的 `RAG_SCHEMES` 中添加新 collection 配置
+4. 在 `rag/__init__.py` 中注册新蓝图
+5. 实现 retrieval.py 和 generation.py
+
+### 新增学习主题
+
+1. 在 `app/blueprints/` 下创建新主题目录
+2. 在 `app/blueprints/__init__.py` 中注册蓝图
+3. 按 Controller / Service 分层实现
+
+---
+
+## 📄 License
+
+MIT
+
+---
+
+## 🙏 致谢
+
+- [Flask](https://flask.palletsprojects.com/) - Web 框架
+- [Milvus](https://milvus.io/) - 向量数据库
+- [智谱 AI](https://open.bigmodel.cn/) - Embedding 服务
+- [LangChain](https://www.langchain.com/) - LLM 应用框架
