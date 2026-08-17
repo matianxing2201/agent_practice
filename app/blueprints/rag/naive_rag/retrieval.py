@@ -1,4 +1,5 @@
-"""阶段 2:Retrieval 检索——从 Milvus 中找到与问题最相关的片段。
+"""
+Retrieval 检索——从 Milvus 中找到与问题最相关的片段。
 
 目标:给定用户问题,返回 top_k 个最相关的知识片段作为生成上下文。
 
@@ -10,8 +11,39 @@
        度量方式见项目根 config.py:METRIC_TYPE(COSINE / IP / L2)。
     3. 整理结果
        返回 top_k 片段:原文 + 相似度分 + 来源。
-
-涉及概念:相似度度量、top_k、向量搜索参数(limit)。
-
-前置条件:collection 已由索引阶段创建并写入数据。
 """
+
+from flask import current_app
+
+from ..knowledge_base import services as kb_services
+from ..knowledge_base.milvus_store import MilvusStore
+
+
+def retrieve(query: str) -> list[dict]:
+    """检索与问题最相关的知识片段。"""
+    top_k = current_app.config["TOP_K"]
+
+    query_vector = kb_services.embed_text(query)
+    
+    # 2. 相似度检索
+    store = MilvusStore(
+        current_app.config["RAG_SCHEMES"]["naive_rag"]["COLLECTION_NAME"]
+    )
+    store.ensure_collection()
+    
+    results = store.client.search(
+        collection_name=store.collection_name,
+        data=[query_vector],
+        limit=top_k,
+        output_fields=["text"],
+    )
+    
+    # 3. 整理结果
+    retrieved = []
+    for result in results[0]:
+        retrieved.append({
+            "text": result["entity"]["text"],
+            "score": result["distance"],
+        })
+    
+    return retrieved

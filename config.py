@@ -51,7 +51,7 @@ class Config:
     # --- RAG 索引/检索默认参数 ---
     CHUNK_SIZE = 500             # 每块文本的最大字符数
     CHUNK_OVERLAP = 50           # 相邻块重叠字符数(保留上下文连续性)
-    TOP_K = 3                    # 检索返回最相似的片段数量
+    TOP_K = int(os.getenv("TOP_K", 3))  # 检索返回最相似的片段数量
 
     # --- RAG 方案配置 ---
     # 新增学习方案:在这里加一个条目即可,无需新建 config 文件

@@ -51,7 +51,10 @@ def clean_collection(app):
 
 @pytest.fixture
 def fake_embedding(monkeypatch):
-    """替换 services.embed_text:返回确定性 2048 维向量,并记录调用次数。"""
+    """替换 knowledge_base.services.embed_text:返回确定性 2048 维向量,并记录调用次数。
+
+    naive_rag 的 retrieval 也通过 kb_services.embed_text 调用,因此同样生效。
+    """
 
     from app.blueprints.rag.knowledge_base import services
 
