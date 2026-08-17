@@ -1,40 +1,40 @@
 # 🤖 Agent Practice
 
-AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，按学习系列组织内容，每个系列独立目录，互不干扰。
+AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，从零实现 RAG（检索增强生成）全链路，覆盖索引、检索、生成三个阶段，支持流式 SSE 输出。
 
 [![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-3.x-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![Milvus](https://img.shields.io/badge/Milvus-2.x-00A1E0?logo=milvus&logoColor=white)](https://milvus.io/)
 
 ---
 
 ## 📋 项目简介
 
-本项目是一个 **AI Agent 学习实践平台**，采用模块化架构设计，每个学习系列作为独立蓝图，内部按 Controller / Service 两层分层。
+本项目是一个 **AI Agent 学习实践平台**，采用模块化架构设计，每个学习主题（如 RAG）作为独立蓝图，内部按 Controller / Service 两层分层。
 
 ### 核心特性
 
-- 🏗️ **应用工厂模式**：Flask 应用工厂 + 蓝图注册，支持多系列扩展
-- 🧩 **模块化设计**：每个学习系列独立目录，互不干扰
+- 🏗️ **应用工厂模式**：Flask 应用工厂 + 蓝图注册，支持多主题扩展
+- 🔍 **RAG 全链路**：索引 → 检索 → 生成，完整实现检索增强生成
+- ⚡ **流式输出**：基于 SSE（Server-Sent Events）的流式响应，逐字输出
+- 🧩 **模块化设计**：每个 RAG 方案独立目录，互不干扰
 - 🧪 **测试覆盖**：HTTP seam 测试，mock 外部依赖
 
----
+### 技术栈
 
-## 🗂️ 学习系列
-
-| 系列 | 状态 | 说明 |
+| 组件 | 技术 | 用途 |
 |------|------|------|
-| [**RAG 系列**](#rag-系列) | ✅ 进行中 | 检索增强生成：索引、检索、生成、流式输出 |
-| **Agent 系列** | 🚧 规划中 | 智能体：工具调用、规划、记忆 |
-| **Fine-tuning 系列** | 🚧 规划中 | 模型微调：LoRA、DPO、数据准备 |
-| **Deployment 系列** | 🚧 规划中 | 部署上线：Docker、CI/CD、监控 |
+| Web 框架 | Flask 3.x | HTTP 服务、蓝图路由 |
+| 向量数据库 | Milvus 2.x | 向量存储与相似度检索 |
+| Embedding | 智谱 embedding-3 | 文本向量化（2048 维） |
+| LLM | DeepSeek v4 Flash | 对话生成（OpenAI 兼容接口） |
+| 测试 | pytest | HTTP seam 测试 |
 
 ---
 
-## 📚 RAG 系列
+## 🗺️ 学习路线
 
-RAG（Retrieval-Augmented Generation，检索增强生成）系列，从零实现完整的 RAG 全链路。
-
-### 系列内容
+本项目按 RAG（检索增强生成）的三个标准阶段组织学习内容：
 
 | 阶段 | 模块 | 核心概念 | 实现文件 |
 |------|------|----------|----------|
@@ -42,7 +42,42 @@ RAG（Retrieval-Augmented Generation，检索增强生成）系列，从零实�
 | **Retrieval（检索）** | naive_rag | 问题向量化、相似度检索、top_k | `retrieval.py` |
 | **Generation（生成）** | naive_rag | prompt 组装、LLM 调用、流式输出 | `generation.py` |
 
-### 架构设计
+### 知识库管理（knowledge_base）
+
+独立于具体 RAG 方案的数据管理层，提供完整 CRUD：
+
+| 接口 | 方法 | 功能 |
+|------|------|------|
+| `/rag/knowledge/upload` | POST | 上传 `.txt` 文件批量导入 |
+| `/rag/knowledge` | POST | 手动输入单条记录 |
+| `/rag/knowledge` | GET | 分页列表 |
+| `/rag/knowledge/<id>` | GET | 单条详情 |
+| `/rag/knowledge/<id>` | PUT | 更新记录（自动重新向量化） |
+| `/rag/knowledge/<id>` | DELETE | 删除记录 |
+
+### Naive RAG 方案
+
+最基础的 RAG 实现，专注于**检索 + 生成**：
+
+| 接口 | 方法 | 功能 |
+|------|------|------|
+| `/rag/naive/query` | POST | 提问，触发检索 + 流式生成 |
+
+**SSE 事件格式：**
+
+```
+data: {"type": "sources", "sources": [{"text": "...", "score": 0.9}]}
+
+data: {"type": "delta", "content": "你"}
+
+data: {"type": "delta", "content": "好"}
+
+data: {"type": "done"}
+```
+
+---
+
+## 🏛️ 架构设计
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -73,35 +108,30 @@ RAG（Retrieval-Augmented Generation，检索增强生成）系列，从零实�
               └───────────────────────┘
 ```
 
-### API 接口
+### 分层职责
 
-#### 知识库管理（knowledge_base）
+| 层 | 职责 | 说明 |
+|----|------|------|
+| **Controller** | 请求/响应处理 | 解析参数、调用 Service、返回 JSON |
+| **Service** | 业务编排 | 组织检索、生成等业务流程 |
+| **Store** | 数据访问 | Milvus CRUD（仅 knowledge_base） |
 
-| 接口 | 方法 | 功能 |
-|------|------|------|
-| `/rag/knowledge/upload` | POST | 上传 `.txt` 文件批量导入 |
-| `/rag/knowledge` | POST | 手动输入单条记录 |
-| `/rag/knowledge` | GET | 分页列表 |
-| `/rag/knowledge/<id>` | GET | 单条详情 |
-| `/rag/knowledge/<id>` | PUT | 更新记录（自动重新向量化） |
-| `/rag/knowledge/<id>` | DELETE | 删除记录 |
-
-#### Naive RAG 方案
-
-| 接口 | 方法 | 功能 |
-|------|------|------|
-| `/rag/naive/query` | POST | 提问，触发检索 + 流式生成 |
-
-**SSE 事件格式：**
+### 数据流
 
 ```
-data: {"type": "sources", "sources": [{"text": "...", "score": 0.9}]}
-
-data: {"type": "delta", "content": "你"}
-
-data: {"type": "delta", "content": "好"}
-
-data: {"type": "done"}
+用户提问
+    │
+    ▼
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│  Retrieval  │───▶│  Generation │───▶│  SSE 流式   │
+│  (检索)     │    │  (生成)     │    │  输出       │
+└─────────────┘    └─────────────┘    └─────────────┘
+       │                  │
+       ▼                  ▼
+┌─────────────┐    ┌─────────────┐
+│   Milvus    │    │   LLM API   │
+│  (向量库)   │    │  (DeepSeek) │
+└─────────────┘    └─────────────┘
 ```
 
 ---
@@ -173,7 +203,7 @@ agent_practice/
     ├── __init__.py          # 应用工厂 create_app()
     └── blueprints/
         ├── __init__.py      # 蓝图注册器
-        └── rag/             # RAG 学习系列
+        └── rag/             # RAG 学习主题
             ├── __init__.py  # Blueprint 定义 (url_prefix=/rag)
             ├── knowledge_base/  # 知识库管理模块
             │   ├── controllers.py
@@ -223,13 +253,6 @@ pytest tests/test_naive_rag.py -v
 
 ## 📚 扩展指南
 
-### 新增学习系列
-
-1. 在 `app/blueprints/` 下创建新系列目录（如 `agent/`）
-2. 在 `app/blueprints/__init__.py` 中注册蓝图
-3. 按 Controller / Service 分层实现
-4. 在 `config.py` 中添加相关配置
-
 ### 新增 RAG 方案
 
 1. 复制 `naive_rag/` 目录为新方案目录
@@ -237,6 +260,12 @@ pytest tests/test_naive_rag.py -v
 3. 在 `config.py` 的 `RAG_SCHEMES` 中添加新 collection 配置
 4. 在 `rag/__init__.py` 中注册新蓝图
 5. 实现 retrieval.py 和 generation.py
+
+### 新增学习主题
+
+1. 在 `app/blueprints/` 下创建新主题目录
+2. 在 `app/blueprints/__init__.py` 中注册蓝图
+3. 按 Controller / Service 分层实现
 
 ---
 
@@ -251,3 +280,4 @@ MIT
 - [Flask](https://flask.palletsprojects.com/) - Web 框架
 - [Milvus](https://milvus.io/) - 向量数据库
 - [智谱 AI](https://open.bigmodel.cn/) - Embedding 服务
+- [LangChain](https://www.langchain.com/) - LLM 应用框架
