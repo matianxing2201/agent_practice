@@ -1,6 +1,6 @@
 # 🤖 Agent Practice
 
-AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，从零实现 RAG（检索增强生成）全链路，覆盖索引、检索、生成三个阶段，支持流式 SSE 输出。
+AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，从零实现 RAG（检索增强生成）全链路，覆盖索引、检索、生成三个阶段，包含 **Naive RAG（朴素检索）** 与 **Hybrid RAG（混合检索）** 两种方案，支持流式 SSE 输出。
 
 [![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-3.x-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
@@ -40,7 +40,8 @@ AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，�
 |------|------|----------|----------|
 | **Indexing（索引）** | knowledge_base | 文档切分、向量化、Milvus 写入 | `knowledge_base/` |
 | **Retrieval（检索）** | naive_rag | 问题向量化、相似度检索、top_k | `retrieval.py` |
-| **Generation（生成）** | naive_rag | prompt 组装、LLM 调用、流式输出 | `generation.py` |
+| **Retrieval（检索）** | hybrid_rag | 向量召回 + BM25 关键词重排序 | `retrieval.py` |
+| **Generation（生成）** | naive_rag / hybrid_rag | prompt 组装、LLM 调用、流式输出 | `generation.py` |
 
 ### 知识库管理（knowledge_base）
 
@@ -63,7 +64,24 @@ AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，�
 |------|------|------|
 | `/rag/naive/query` | POST | 提问，触发检索 + 流式生成 |
 
-**SSE 事件格式：**
+**检索方式**：单路向量检索 —— 问题向量化后直接按 Milvus 相似度取 top_k。
+
+### Hybrid RAG 方案
+
+在 Naive RAG 基础上改进检索阶段：**向量召回 + BM25 关键词重排序**，过滤语义噪声：
+
+| 接口 | 方法 | 功能 |
+|------|------|------|
+| `/rag/hybrid/query` | POST | 提问，触发混合检索 + 流式生成 |
+
+**检索方式**（两段式）：
+
+1. **向量召回（宽）**：问题向量化 → Milvus 相似度检索，取 `CANDIDATE_K`（默认 5）条候选，保证语义相关的都捞进来
+2. **BM25 重排（窄）**：对候选 jieba 分词 → BM25 关键词打分 → 取分数最高的 `TOP_K` 条，只留字面真正相关的
+
+> 向量检索衡量语义相似度，语义近不代表字面相关（如"恶寒头痛"可能与"咳嗽痰多"的病历语义相近但关键词零重合）。BM25 重排过滤这类噪声，适合合同、标书、规章制度等术语精确的场景。
+
+**SSE 事件格式（两种方案一致）：**
 
 ```
 data: {"type": "sources", "sources": [{"text": "...", "score": 0.9}]}
@@ -80,26 +98,25 @@ data: {"type": "done"}
 ## 🏛️ 架构设计
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                      Flask Application                       │
-├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────────┐  ┌─────────────────┐  ┌──────────────┐ │
-│  │   knowledge_base │  │    naive_rag    │  │   (future)   │ │
-│  │   (数据管理者)   │  │   (数据使用者)  │  │   (其他方案)  │ │
-│  ├─────────────────┤  ├─────────────────┤  ├──────────────┤ │
-│  │ controllers.py  │  │ controllers.py  │  │    ...       │ │
-│  │ services.py     │  │ services.py     │  │              │ │
-│  │ milvus_store.py │  │ retrieval.py    │  │              │ │
-│  │                 │  │ generation.py   │  │              │ │
-│  └────────┬────────┘  └────────┬────────┘  └──────────────┘ │
-│           │                    │                             │
-│           └────────┬───────────┘                             │
-│                    ▼                                         │
-│           ┌─────────────────┐                               │
-│           │   config.py     │                               │
-│           │ (统一配置管理)  │                               │
-│           └─────────────────┘                               │
-└─────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────┐
+│                        Flask Application                          │
+├───────────────────────────────────────────────────────────────────┤
+│  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐ │
+│  │  knowledge_base   │  │    naive_rag     │  │    hybrid_rag    │ │
+│  │  (数据管理者)      │  │  (数据使用者①)   │  │  (数据使用者②)   │ │
+│  ├──────────────────┤  ├──────────────────┤  ├──────────────────┤ │
+│  │ controllers.py   │  │ controllers.py   │  │ controllers.py   │ │
+│  │ services.py      │  │ services.py      │  │ services.py      │ │
+│  │ milvus_store.py  │  │ retrieval.py     │  │ retrieval.py     │ │
+│  │                  │  │ generation.py    │  │ generation.py    │ │
+│  └────────┬─────────┘  └────────┬─────────┘  └────────┬─────────┘ │
+│           └────────────┬────────┴─────────┬───────────┘           │
+│                        ▼                  ▼                       │
+│           ┌─────────────────────────────────────┐                 │
+│           │            config.py                │                 │
+│           │          (统一配置管理)              │                 │
+│           └─────────────────────────────────────┘                 │
+└───────────────────────────────────────────────────────────────────┘
                           │
                           ▼
               ┌───────────────────────┐
@@ -198,7 +215,8 @@ agent_practice/
 ├── tests/                   # pytest 测试
 │   ├── conftest.py          # 测试 fixtures
 │   ├── test_knowledge_crud.py
-│   └── test_naive_rag.py
+│   ├── test_naive_rag.py
+│   └── test_hybrid_rag.py
 └── app/
     ├── __init__.py          # 应用工厂 create_app()
     └── blueprints/
@@ -209,7 +227,12 @@ agent_practice/
             │   ├── controllers.py
             │   ├── services.py
             │   └── milvus_store.py
-            └── naive_rag/   # Naive RAG 方案
+            ├── naive_rag/   # Naive RAG 方案
+            │   ├── controllers.py
+            │   ├── services.py
+            │   ├── retrieval.py
+            │   └── generation.py
+            └── hybrid_rag/  # Hybrid RAG 方案
                 ├── controllers.py
                 ├── services.py
                 ├── retrieval.py
@@ -246,6 +269,7 @@ pytest tests/test_naive_rag.py -v
 | `MILVUS_HOST` | Milvus 地址 | `127.0.0.1` |
 | `MILVUS_PORT` | Milvus 端口 | `19530` |
 | `TOP_K` | 检索返回数量 | `3` |
+| `CANDIDATE_K` | 混合检索向量召回候选数 | `5` |
 | `CHUNK_SIZE` | 文本切分大小 | `500` |
 | `CHUNK_OVERLAP` | 切分重叠 | `50` |
 
@@ -256,10 +280,10 @@ pytest tests/test_naive_rag.py -v
 ### 新增 RAG 方案
 
 1. 复制 `naive_rag/` 目录为新方案目录
-2. 修改 `__init__.py` 的 Blueprint 名和 `url_prefix`
-3. 在 `config.py` 的 `RAG_SCHEMES` 中添加新 collection 配置
-4. 在 `rag/__init__.py` 中注册新蓝图
-5. 实现 retrieval.py 和 generation.py
+2. 在 `config.py` 的 `RAG_SCHEMES` 中添加新方案配置（含 `COLLECTION_NAME`）
+3. 在 `rag/__init__.py` 中导入新方案注册路由
+4. 实现 retrieval.py 和 generation.py
+5. 注意：多个方案的 controller 路由函数名不要重复（Flask 端点冲突）
 
 ### 新增学习主题
 
