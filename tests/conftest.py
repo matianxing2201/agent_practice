@@ -19,7 +19,11 @@ TEST_COLLECTION = "tcm_medical_record_test"
 def app():
     application = create_app("testing")
     application.config["RAG_SCHEMES"] = {
-        "naive_rag": {"COLLECTION_NAME": TEST_COLLECTION}
+        "naive_rag": {"COLLECTION_NAME": TEST_COLLECTION},
+        "hybrid_rag": {
+            "COLLECTION_NAME": TEST_COLLECTION,
+            "CANDIDATE_K": 5,
+        },
     }
     return application
 

@@ -59,6 +59,10 @@ class Config:
         "naive_rag": {
             "COLLECTION_NAME": "tcm_medical_record",  # 中医病历知识库
         },
+        "hybrid_rag": {
+            "COLLECTION_NAME": "tcm_medical_record",  # 复用同一知识库
+            "CANDIDATE_K": 5,  # 向量召回候选数(大于 TOP_K,供 BM25 重排序)
+        },
     }
 
     # --- 知识库目录(索引阶段从这里读文档)---
