@@ -42,6 +42,9 @@ class Config:
     CHAT_BASE_URL = os.getenv("CHAT_BASE_URL", "https://opencode.ai/zen/go/v1")
     CHAT_MODEL = os.getenv("CHAT_MODEL", "deepseek-v4-flash")
 
+    # --- 联网搜索:Tavily(agentic_rag 的 search_online_tool 使用)---
+    TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
+
     # --- Milvus(全局统一)---
     MILVUS_HOST = "127.0.0.1"
     MILVUS_PORT = "19530"
@@ -62,6 +65,11 @@ class Config:
         "hybrid_rag": {
             "COLLECTION_NAME": "tcm_medical_record",  # 复用同一知识库
             "CANDIDATE_K": 5,  # 向量召回候选数(大于 TOP_K,供 BM25 重排序)
+        },
+        "agentic_rag": {
+            "COLLECTION_NAME": "tcm_medical_record",  # 复用同一知识库
+            "TOP_K": 3,  # 本地检索工具返回的片段数(参考代码用 2,这里与全局一致)
+            "MAX_ITERATIONS": 5,  # ReAct 循环迭代上限,防止 Agent 无限调用工具
         },
     }
 

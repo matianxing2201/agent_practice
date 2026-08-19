@@ -24,7 +24,13 @@ def app():
             "COLLECTION_NAME": TEST_COLLECTION,
             "CANDIDATE_K": 5,
         },
+        "agentic_rag": {
+            "COLLECTION_NAME": TEST_COLLECTION,
+            "TOP_K": 3,
+            "MAX_ITERATIONS": 5,
+        },
     }
+    application.config["TAVILY_API_KEY"] = "test-tavily-key"
     return application
 
 
