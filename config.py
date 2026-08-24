@@ -71,6 +71,20 @@ class Config:
             "TOP_K": 3,  # 本地检索工具返回的片段数(参考代码用 2,这里与全局一致)
             "MAX_ITERATIONS": 5,  # ReAct 循环迭代上限,防止 Agent 无限调用工具
         },
+        "parent_document_rag": {
+            # 子块向量库(独立 schema:多 parent_id 字段,与单层 knowledge_base 隔离)
+            "COLLECTION_NAME": "tcm_medical_record_pd",
+            "PARENT_CHUNK_SIZE": 800,   # 父块:大块,保留完整语义,存 JSON 文件
+            "PARENT_CHUNK_OVERLAP": 100,
+            "CHILD_CHUNK_SIZE": 300,    # 子块:小块,向量检索精确,存 Milvus
+            "CHILD_CHUNK_OVERLAP": 50,
+            "TOP_K": 3,  # 子块召回数(命中后回取父块全文)
+        },
+        "self_rag": {
+            "COLLECTION_NAME": "tcm_medical_record",  # 复用共享知识库
+            "TOP_K": 3,  # 检索备选病例块数
+            "MAX_RETRIEVE_ROUND": 3,  # 自省最大重检索轮数(防死循环)
+        },
     }
 
     # --- 知识库目录(索引阶段从这里读文档)---

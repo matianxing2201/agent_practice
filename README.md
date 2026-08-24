@@ -1,6 +1,6 @@
 # 🤖 Agent Practice
 
-AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，从零实现 RAG（检索增强生成）全链路，包含 **Naive RAG（朴素检索）**、**Hybrid RAG（混合检索）**、**Agentic RAG（自主决策检索）** 三种方案。
+AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，从零实现 RAG（检索增强生成）全链路，包含 **Naive RAG（朴素检索）**、**Hybrid RAG（混合检索）**、**Agentic RAG（自主决策检索）**、**Parent-Document RAG（父子分块）**、**Self-RAG（自省检索）** 五种方案。
 
 [![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-3.x-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
@@ -42,6 +42,8 @@ AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，�
 | **Retrieval（检索）** | naive_rag | 向量 top_k |
 | **Retrieval（检索）** | hybrid_rag | 向量召回 + BM25 重排 |
 | **Retrieval（检索）** | agentic_rag | LLM 自主决策调工具（本地 + 联网） |
+| **Indexing（索引）** | parent_document_rag | 父子分块，小块检索、大块返回 |
+| **Retrieval（检索）** | self_rag | 自省工作流：判断要不要查、查得对不对、够不够用 |
 | **Generation（生成）** | naive / hybrid | SSE 流式输出 |
 | **Generation（生成）** | agentic_rag | JSON 返回 |
 
@@ -87,6 +89,27 @@ AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，�
 | `/rag/agentic/query` | POST | 提问，LLM 自主决策调用工具 |
 
 **返回格式**：JSON `{trace, sources, answer}`——`trace` 展示「决策 → 观察」推理链（教学可见性），`sources` 为本地引用片段，`answer` 为最终答案。
+
+### Parent-Document RAG 方案
+
+**父子分块**：解决单层分块两难——切大块检索不准、切小块语义残缺。双层表示：子块（小）存向量库「检索」，父块（大）存 KV「上下文」，命中子块后回取父块全文：
+
+| 接口 | 方法 | 功能 |
+|------|------|------|
+| `/rag/parent/upload` | POST | 上传 `.txt`，父子分块双存储入库 |
+| `/rag/parent/query` | POST | 提问，子块检索 → 父块全文 → 生成（SSE 流式） |
+
+**输出格式**：SSE——先 `sources`（命中的父块全文，直接展示「小块命中、大块返回」），再 `delta` 逐块流式答案，最后 `done`。
+
+### Self-RAG 方案
+
+**自省 RAG**：普通 RAG 加一层「自我反思」——LLM 判断要不要检索、检索结果相不相关、够不够用，不够就重检索，直到资料充足再生成（LangGraph 状态机）：
+
+| 接口 | 方法 | 功能 |
+|------|------|------|
+| `/rag/self/query` | POST | 提问，自省工作流检索 → 过滤 → 生成 |
+
+**返回格式**：JSON `{answer, sources, retrieve_round}`——`retrieve_round` 展示「资料不足 → 重检索」的自省轮数。
 
 **SSE 事件格式（naive / hybrid 共用）：**
 
@@ -220,7 +243,9 @@ agent_practice/
 │   ├── test_knowledge_crud.py
 │   ├── test_naive_rag.py
 │   ├── test_hybrid_rag.py
-│   └── test_agentic_rag.py
+│   ├── test_agentic_rag.py
+│   ├── test_parent_document_rag.py
+│   └── test_self_rag.py
 └── app/
     ├── __init__.py          # 应用工厂 create_app()
     └── blueprints/
@@ -246,6 +271,21 @@ agent_practice/
                 ├── services.py
                 ├── tools.py       # @tool 工具:本地检索 / Tavily 联网
                 ├── prompts.py     # 系统提示词
+                └── __init__.py
+            └── parent_document_rag/  # 方案④ 父子分块
+                ├── controllers.py
+                ├── services.py
+                ├── splitter.py    # 父子两级切分
+                ├── store.py       # 子块→Milvus + 父块→JSON 文件
+                ├── prompts.py
+                └── __init__.py
+            └── self_rag/  # 方案⑤ 自省工作流
+                ├── controllers.py
+                ├── services.py
+                ├── builder.py     # LangGraph StateGraph 组装
+                ├── nodes.py       # 5 节点 + 2 路由
+                ├── prompts.py     # 4 个自省 prompt
+                ├── state.py       # SelfRAGState
                 └── __init__.py
 ```
 
@@ -282,6 +322,8 @@ pytest tests/test_naive_rag.py -v
 | `CANDIDATE_K` | 混合检索向量召回候选数 | `5` |
 | `MAX_ITERATIONS` | Agentic ReAct 循环迭代上限 | `5` |
 | `TAVILY_API_KEY` | Tavily 联网搜索 Key（agentic） | - |
+| `PARENT_CHUNK_SIZE` | 父子分块父块大小 | `800` |
+| `CHILD_CHUNK_SIZE` | 父子分块子块大小 | `300` |
 | `CHUNK_SIZE` | 文本切分大小 | `500` |
 | `CHUNK_OVERLAP` | 切分重叠 | `50` |
 

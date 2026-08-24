@@ -14,3 +14,5 @@ from . import knowledge_base  # noqa: E402,F401
 from . import naive_rag  # noqa: E402,F401
 from . import hybrid_rag  # noqa: E402,F401
 from . import agentic_rag  # noqa: E402,F401
+from . import parent_document_rag  # noqa: E402,F401
+from . import self_rag  # noqa: E402,F401

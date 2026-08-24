@@ -6,6 +6,7 @@
 """
 
 import hashlib
+from pathlib import Path
 
 import pytest
 
@@ -13,6 +14,7 @@ from app import create_app
 
 # 独立测试 collection,与真实知识库隔离
 TEST_COLLECTION = "tcm_medical_record_test"
+TEST_COLLECTION_PD = "tcm_medical_record_pd_test"
 
 
 @pytest.fixture
@@ -29,6 +31,19 @@ def app():
             "TOP_K": 3,
             "MAX_ITERATIONS": 5,
         },
+        "parent_document_rag": {
+            "COLLECTION_NAME": TEST_COLLECTION_PD,
+            "PARENT_CHUNK_SIZE": 800,
+            "PARENT_CHUNK_OVERLAP": 100,
+            "CHILD_CHUNK_SIZE": 300,
+            "CHILD_CHUNK_OVERLAP": 50,
+            "TOP_K": 3,
+        },
+        "self_rag": {
+            "COLLECTION_NAME": TEST_COLLECTION,
+            "TOP_K": 3,
+            "MAX_RETRIEVE_ROUND": 3,
+        },
     }
     application.config["TAVILY_API_KEY"] = "test-tavily-key"
     return application
@@ -41,7 +56,7 @@ def client(app):
 
 @pytest.fixture(autouse=True)
 def clean_collection(app):
-    """每个测试前清空测试 collection,保证测试相互隔离。"""
+    """每个测试前清空测试数据,保证测试相互隔离:Milvus collection + 父块 JSON 文件。"""
 
     def _drop():
         from pymilvus import MilvusClient
@@ -51,8 +66,11 @@ def clean_collection(app):
                 f"http://{app.config['MILVUS_HOST']}:{app.config['MILVUS_PORT']}"
             )
             client = MilvusClient(uri=uri)
-            if client.has_collection(TEST_COLLECTION):
-                client.drop_collection(TEST_COLLECTION)
+            for coll in (TEST_COLLECTION, TEST_COLLECTION_PD):
+                if client.has_collection(coll):
+                    client.drop_collection(coll)
+            parent_file = Path(app.config["KNOWLEDGE_BASE_DIR"]) / f"parent_chunks_{TEST_COLLECTION_PD}.json"
+            parent_file.unlink(missing_ok=True)
 
     _drop()
     yield
