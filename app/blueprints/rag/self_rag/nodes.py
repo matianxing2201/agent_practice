@@ -11,7 +11,7 @@
                                           generate → 结束
 
 Self-RAG 与普通 RAG 的区别:检索动作和检索结果都要经过 LLM 自省——
-「要不要查、查得对不对、够不够用」全部显式判断,这是本方案的教学核心。
+「要不要查、查得对不对、够不够用」。
 """
 
 from flask import current_app
@@ -34,7 +34,7 @@ def _llm() -> ChatOpenAI:
 
 
 def _invoke(template, **variables) -> str:
-    """用 prompt 调 LLM,返回纯文本结果(测试可替换)。"""
+    """用 prompt 调 LLM,返回纯文本结果"""
     return (template | _llm() | StrOutputParser()).invoke(variables)
 
 

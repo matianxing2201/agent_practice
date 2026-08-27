@@ -1,6 +1,6 @@
 # 🤖 Agent Practice
 
-AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，从零实现 RAG（检索增强生成）全链路，包含 **Naive RAG（朴素检索）**、**Hybrid RAG（混合检索）**、**Agentic RAG（自主决策检索）**、**Parent-Document RAG（父子分块）**、**Self-RAG（自省检索）** 五种方案。
+AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，从零实现 RAG（检索增强生成）全链路，包含 **Naive RAG（朴素检索）**、**Hybrid RAG（混合检索）**、**Agentic RAG（自主决策检索）**、**Parent-Document RAG（父子分块）**、**Self-RAG（自省检索）**、**Corrective RAG（纠错检索）** 六种方案。
 
 [![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-3.x-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
@@ -44,6 +44,7 @@ AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，�
 | **Retrieval（检索）** | agentic_rag | LLM 自主决策调工具（本地 + 联网） |
 | **Indexing（索引）** | parent_document_rag | 父子分块，小块检索、大块返回 |
 | **Retrieval（检索）** | self_rag | 自省工作流：判断要不要查、查得对不对、够不够用 |
+| **Retrieval（检索）** | corrective_rag | 纠错：检索结果相关性评审，不相关转联网补充 |
 | **Generation（生成）** | naive / hybrid | SSE 流式输出 |
 | **Generation（生成）** | agentic_rag | JSON 返回 |
 
@@ -110,6 +111,16 @@ AI Agent 学习实践项目。基于 Flask 应用工厂 + 蓝图分层架构，�
 | `/rag/self/query` | POST | 提问，自省工作流检索 → 过滤 → 生成 |
 
 **返回格式**：JSON `{answer, sources, retrieve_round}`——`retrieve_round` 展示「资料不足 → 重检索」的自省轮数。
+
+### Corrective-RAG 方案
+
+**纠错 RAG**：在检索后加一道「相关性评审」关卡——逐条判断检索结果相关与否，相关资料不足就放弃本地内容、转 Tavily 联网补充，避免拿不相关检索结果硬编答案：
+
+| 接口 | 方法 | 功能 |
+|------|------|------|
+| `/rag/corrective/query` | POST | 提问，检索 → 相关性评审 →（不足则联网）→ 生成 |
+
+**输出格式**：SSE 流式——`data: {"content": "..."}` 逐块输出答案，`data: {"done": true}` 结束。
 
 **SSE 事件格式（naive / hybrid 共用）：**
 
@@ -245,7 +256,8 @@ agent_practice/
 │   ├── test_hybrid_rag.py
 │   ├── test_agentic_rag.py
 │   ├── test_parent_document_rag.py
-│   └── test_self_rag.py
+│   ├── test_self_rag.py
+│   └── test_corrective_rag.py
 └── app/
     ├── __init__.py          # 应用工厂 create_app()
     └── blueprints/
@@ -286,6 +298,14 @@ agent_practice/
                 ├── nodes.py       # 5 节点 + 2 路由
                 ├── prompts.py     # 4 个自省 prompt
                 ├── state.py       # SelfRAGState
+                └── __init__.py
+            └── corrective_rag/  # 方案⑥ 纠错 RAG
+                ├── controllers.py
+                ├── services.py
+                ├── builder.py     # LangGraph StateGraph 组装
+                ├── nodes.py       # 4 节点 + 1 路由(相关性评审)
+                ├── prompts.py     # 评审 + 生成 prompt
+                ├── state.py       # CRAGState
                 └── __init__.py
 ```
 

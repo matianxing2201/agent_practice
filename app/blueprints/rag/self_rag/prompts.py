@@ -1,6 +1,5 @@
 """Self-RAG:四个自省节点的提示词。
 
-参考 5_self_rag,每个节点让 LLM 输出一个固定标记词,
 用标记词驱动工作流的路由分支:
     judge_retrieve   RETRIEVE / DIRECT    (要不要检索)
     filter_docs      YES / NO             (这块病历跟患者相关吗,逐块判断)

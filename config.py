@@ -85,6 +85,12 @@ class Config:
             "TOP_K": 3,  # 检索备选病例块数
             "MAX_RETRIEVE_ROUND": 3,  # 自省最大重检索轮数(防死循环)
         },
+        "corrective_rag": {
+            "COLLECTION_NAME": "tcm_medical_record",  # 复用共享知识库
+            "RETRIEVE_TOP_K": 5,  # 检索候选数(评审后选相关)
+            "MIN_RELEVANT_DATA_COUNT": 2,  # 相关资料 ≥ 2 才直接用,否则联网纠错
+            "SEARCH_MAX_RESULTS": 3,  # Tavily 联网返回条数
+        },
     }
 
     # --- 知识库目录(索引阶段从这里读文档)---

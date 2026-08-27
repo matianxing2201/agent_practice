@@ -44,6 +44,12 @@ def app():
             "TOP_K": 3,
             "MAX_RETRIEVE_ROUND": 3,
         },
+        "corrective_rag": {
+            "COLLECTION_NAME": TEST_COLLECTION,
+            "RETRIEVE_TOP_K": 5,
+            "MIN_RELEVANT_DATA_COUNT": 2,
+            "SEARCH_MAX_RESULTS": 3,
+        },
     }
     application.config["TAVILY_API_KEY"] = "test-tavily-key"
     return application

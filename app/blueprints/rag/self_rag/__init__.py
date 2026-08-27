@@ -4,8 +4,7 @@
 做元判断:要不要检索(judge)、查得对不对(filter)、够不够用(check)、
 不够就重检索,直到资料充足再生成。参考 5_self_rag(LangGraph StateGraph)。
 
-检索复用共享知识库 tcm_medical_record(与 naive/hybrid/agentic 同库),
-方案内只新增「自省控制流」——这正是本方案区别于其他 RAG 的教学核心。
+检索复用共享知识库 tcm_medical_record(与 naive/hybrid/agentic 同库)。
 """
 
 from .. import bp
