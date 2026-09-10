@@ -51,6 +51,18 @@ class Config:
     METRIC_TYPE = "COSINE"       # 向量相似度度量:IP(内积)/ COSINE / L2
     EMBEDDING_DIM = 2048         # 必须与 embedding 模型输出维度一致(embedding-3)
 
+    # --- Graph RAG 前置案例:Elasticsearch(服务见 ~/Documents/software/elastic-neo4j/)---
+    # ES 8.19.21 关安全认证直连(与课程 demo 一致);IK 中文分词插件已内置于镜像
+    ES_HOST = "127.0.0.1"
+    ES_PORT = "9200"
+
+    # --- Graph RAG 前置案例:Neo4j(服务见 ~/Documents/software/elastic-neo4j/)---
+    NEO4J_URI = os.getenv("NEO4J_URI", "bolt://127.0.0.1:7687")
+    NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
+    # 密码默认值 = ~/Documents/software/elastic-neo4j/docker-compose.yml 的 NEO4J_AUTH,
+    # 账号信息已记录在 README(本地学习环境)
+    NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "matianxing0123")
+
     # --- RAG 索引/检索默认参数 ---
     CHUNK_SIZE = 500             # 每块文本的最大字符数
     CHUNK_OVERLAP = 50           # 相邻块重叠字符数(保留上下文连续性)
@@ -90,6 +102,11 @@ class Config:
             "RETRIEVE_TOP_K": 5,  # 检索候选数(评审后选相关)
             "MIN_RELEVANT_DATA_COUNT": 2,  # 相关资料 ≥ 2 才直接用,否则联网纠错
             "SEARCH_MAX_RESULTS": 3,  # Tavily 联网返回条数
+        },
+        "graph_rag": {
+            # 前置知识案例(elasticsearch / neo4j)默认参数,与课程 demo 同名索引
+            "ES_INDEX": "goods_v1",  # ES 案例默认索引(含 IK 中文分词 mapping)
+            "ES_TOP_K": 5,           # ES 案例检索默认返回条数
         },
     }
 

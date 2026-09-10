@@ -10,3 +10,8 @@ jieba>=0.42.0
 rank-bm25>=0.2.0
 tavily-python>=0.5.0
 langchain-text-splitters>=0.3.0
+# Graph RAG 前置案例:Elasticsearch(IK 中文检索)+ Neo4j(图数据库)
+# 服务基础设施独立于项目,见 ~/Documents/software/elastic-neo4j/(docker compose up -d)
+# 版本配套:ES 8.19.21 <-> elasticsearch-py 8.x;Neo4j 5.26 <-> neo4j-driver 5.x
+elasticsearch>=8.19,<9
+neo4j>=5.26,<6
