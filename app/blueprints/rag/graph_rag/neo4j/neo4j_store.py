@@ -5,7 +5,7 @@
 
 【TODO】待实现:
     Neo4jStore 类:driver 连接与关闭 / verify_connectivity /
-                  run_cypher(返回 [{...}] 记录列表,即课程 demo_1 的 tool 封装)
+                  run_cypher(返回 [{...}] 记录列表)
 
 占位骨架,待实现。
 """

@@ -1,7 +1,6 @@
 """Graph RAG 学习主题:前置知识案例容器。
 
-正式实现 Graph RAG 之前,先补齐两个底层知识点(与课程
-big-model/6_AIAgent/AIAgentStudy/7_graph_rag/ 对应):
+正式实现 Graph RAG 之前,先补齐两个底层知识点:
 
     elasticsearch/   案例① 中文检索基础设施:ES + IK 分词器
     neo4j/           案例② 图数据库基础设施:Cypher / 节点关系
