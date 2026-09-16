@@ -35,7 +35,7 @@ Flask 应用工厂 + 蓝图分层的 AI Agent 学习实践项目，从零实现 
 | parent_document_rag | 父子分块：子块检索、父块返回 | `/rag/parent/upload`、`/rag/parent/query` | SSE |
 | self_rag | 自省工作流：判断是否检索、相关性、够用即生成，不足重检索 | `/rag/self/query` | JSON `{answer, sources, retrieve_round}` |
 | corrective_rag | 检索后相关性评审，不足转网络补充 | `/rag/corrective/query` | SSE |
-| graph_rag（进行中） | ES 关键词 + Milvus 向量 + Neo4j 图检索，多路融合 | 待注册 | - |
+| graph_rag（进行中） | 前置案例：Elasticsearch + IK 中文关键词检索（后续再接 Neo4j 图检索） | `/rag/graph/es/*` | JSON |
 
 > naive / hybrid 的 SSE 格式：先 `sources`（参考来源）→ `delta`（逐字回答）→ `done`。
 
@@ -103,9 +103,9 @@ agent_practice/
         ├── parent_document_rag/  # ④ 父子分块（splitter + store）
         ├── self_rag/             # ⑤ 自省工作流（LangGraph 状态机）
         ├── corrective_rag/       # ⑥ 纠错 RAG（LangGraph 状态机）
-        └── graph_rag/            # ⑦ Graph RAG（进行中）
-            ├── elasticsearch/    #    ES 关键词检索（es_store）
-            └── neo4j/            #    Neo4j 图存储（neo4j_store）
+        └── graph_rag/            # ⑦ Graph RAG（前置案例）
+            ├── elasticsearch/    #    ES + IK 关键词检索（es_store，demo_1~demo_11）
+            └── neo4j/            #    Neo4j 图存储（neo4j_store，待实现）
 ```
 
 ---

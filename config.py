@@ -52,7 +52,7 @@ class Config:
     EMBEDDING_DIM = 2048         # 必须与 embedding 模型输出维度一致(embedding-3)
 
     # --- Graph RAG 前置案例:Elasticsearch(服务见 ~/Documents/software/elastic-neo4j/)---
-    # ES 8.19.21 关安全认证直连(与课程 demo 一致);IK 中文分词插件已内置于镜像
+    # ES 8.19.21 关安全认证直连;IK 中文分词插件已内置于镜像
     ES_HOST = "127.0.0.1"
     ES_PORT = "9200"
 
@@ -104,7 +104,7 @@ class Config:
             "SEARCH_MAX_RESULTS": 3,  # Tavily 联网返回条数
         },
         "graph_rag": {
-            # 前置知识案例(elasticsearch / neo4j)默认参数,与课程 demo 同名索引
+            # 前置知识案例(elasticsearch / neo4j)默认参数,与课程  同名索引
             "ES_INDEX": "goods_v1",  # ES 案例默认索引(含 IK 中文分词 mapping)
             "ES_TOP_K": 5,           # ES 案例检索默认返回条数
         },
