@@ -13,4 +13,4 @@
 from . import elasticsearch  # noqa: E402,F401
 
 # 【TODO】neo4j 案例实现后放开,并同步在 rag/__init__.py 中注册本模块
-# from . import neo4j  # noqa: E402,F401
+from . import neo4j  # noqa: E402,F401
