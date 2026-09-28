@@ -70,3 +70,74 @@ def neo4j_find_persons():
             return jsonify({"error": "min_age 不能为负"}), 400
 
     return jsonify(services.find_persons(name=name, min_age=min_age))
+
+
+@bp.route("/graph/neo4j/demo/relationship", methods=["POST"])
+def neo4j_create_relationship():
+    """在两个已存在的 Person 间建立 KNOWS 关系。
+    body: {"p1_name": "张三", "p2_name": "李四", "since": 2025}
+    """
+    data = request.get_json(silent=True) or {}
+    if not isinstance(data, dict):
+        return jsonify({"error": "body 必须是对象"}), 400
+
+    p1_name = (data.get("p1_name") or "").strip()
+    p2_name = (data.get("p2_name") or "").strip()
+    if not p1_name or not p2_name:
+        return jsonify({"error": "p1_name / p2_name 不能为空"}), 400
+    if p1_name == p2_name:
+        return jsonify({"error": "p1_name 和 p2_name 不能相同"}), 400
+
+    since = data.get("since")
+    if not isinstance(since, int) or isinstance(since, bool):
+        return jsonify({"error": "since 必须是整数(认识年份)"}), 400
+
+    return jsonify(services.create_relationship(p1_name, p2_name, since))
+
+
+@bp.route("/graph/neo4j/demo/relationships", methods=["GET"])
+def neo4j_find_relationships():
+    """查询 KNOWS 关系。query 参数:
+        from_name   可选。传了只查"此人作为起点认识的人";
+                    不传则返回所有 KNOWS 关系(无向)。
+    """
+    from_name = (request.args.get("from_name") or "").strip() or None
+    return jsonify(services.find_relationships(from_name=from_name))
+
+
+@bp.route("/graph/neo4j/demo/person/update", methods=["POST"])
+def neo4j_update_person():
+    """按 name 更新 Person 属性。
+    body: {"name": "小明", "age": 18, "city": "北京"}(age / city 至少给一个)
+    """
+    data = request.get_json(silent=True) or {}
+    if not isinstance(data, dict):
+        return jsonify({"error": "body 必须是对象"}), 400
+
+    name = (data.get("name") or "").strip()
+    if not name:
+        return jsonify({"error": "name 不能为空"}), 400
+
+    age = data.get("age")
+    if age is not None and (not isinstance(age, int) or isinstance(age, bool)):
+        return jsonify({"error": "age 必须是整数"}), 400
+
+    city = (data.get("city") or "").strip() or None
+
+    return jsonify(services.update_person(name, age=age, city=city))
+
+
+@bp.route("/graph/neo4j/demo/person", methods=["DELETE"])
+def neo4j_delete_person():
+    """按 name 删除 Person 节点。
+    body: {"name": "张三"}(DETACH DELETE,相关关系一并删)
+    """
+    data = request.get_json(silent=True) or {}
+    if not isinstance(data, dict):
+        return jsonify({"error": "body 必须是对象"}), 400
+
+    name = (data.get("name") or "").strip()
+    if not name:
+        return jsonify({"error": "name 不能为空"}), 400
+
+    return jsonify(services.delete_person(name))
