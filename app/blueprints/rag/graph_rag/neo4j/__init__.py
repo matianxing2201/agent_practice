@@ -19,4 +19,5 @@ CREATE / MERGE / MATCH / SET / DELETE 与关系遍历。
     - 通用 /cypher 执行口(便于学习者自测任意语句)
 """
 
-from . import controllers  # noqa: E402,F401  注册案例路由到 rag bp
+from . import controllers  # noqa: E402,F401  注册基础 Person demo 路由到 rag bp
+from . import medicine_prescription  # noqa: E402,F401  注册医学方剂 demo(隔离子包)路由到 rag bp

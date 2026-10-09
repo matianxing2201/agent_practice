@@ -1,0 +1,1342 @@
+[
+  {
+    "chapter": "第一章 解表药",
+    "section": "第一节 发散风寒药",
+    "name": "麻黄",
+    "nature_flavor": "辛、微苦，温",
+    "meridian": "归肺、膀胱经",
+    "application": "1. 风寒感冒，恶寒发热无汗；2. 胸闷喘咳；3. 风水水肿；4. 风寒痹痛、阴疽痰核",
+    "dosage": "煎服 2～10g；发汗解表宜生用，止咳平喘蜜炙",
+    "caution": "表虚自汗、阴虚盗汗、肺肾虚喘者禁用；高血压、失眠慎用"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第一节 发散风寒药",
+    "name": "桂枝",
+    "nature_flavor": "辛、甘，温",
+    "meridian": "归心、肺、膀胱经",
+    "application": "1. 风寒感冒，有汗无汗均可；2. 脘腹冷痛、血寒经闭；3. 关节痹痛；4. 痰饮、水肿、心悸",
+    "dosage": "煎服 3～10g",
+    "caution": "温热病、阴虚火旺、血热出血者忌用；孕妇月经过多慎用"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第一节 发散风寒药",
+    "name": "紫苏（苏叶）",
+    "nature_flavor": "辛，温",
+    "meridian": "归肺、脾经",
+    "application": "1. 风寒感冒兼脾胃气滞胸闷；2. 脾胃气滞，呕吐腹胀；3. 妊娠恶阻；4. 解鱼蟹中毒",
+    "dosage": "煎服 5～10g；不宜久煎",
+    "caution": "阴虚火旺者慎用"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第一节 发散风寒药",
+    "name": "荆芥",
+    "nature_flavor": "辛，微温",
+    "meridian": "归肺、肝经",
+    "application": "1. 风寒、风热感冒；2. 麻疹不透、风疹瘙痒；3. 疮疡初起；4. 炒炭止血（吐衄、崩漏）",
+    "dosage": "煎服 5～10g；止血炒炭",
+    "caution": "阴虚头痛多汗者不宜使用"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第一节 发散风寒药",
+    "name": "防风",
+    "nature_flavor": "辛、甘，微温",
+    "meridian": "归膀胱、肝、脾经",
+    "application": "1. 外感风寒 / 风热表证；2. 风湿痹痛；3. 风疹瘙痒；4. 破伤风、惊风抽搐",
+    "dosage": "煎服 5～10g",
+    "caution": "阴血亏虚、阴虚火旺头痛者慎用"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第一节 发散风寒药",
+    "name": "羌活",
+    "nature_flavor": "辛、苦，温",
+    "meridian": "归膀胱、肾经",
+    "application": "1. 风寒感冒夹湿，头项强痛；2. 上半身风寒湿痹、肩背酸痛",
+    "dosage": "煎服 3～10g",
+    "caution": "阴虚火旺、血虚痹痛慎用；脾胃虚弱易呕吐者少用"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第一节 发散风寒药",
+    "name": "白芷",
+    "nature_flavor": "辛，温",
+    "meridian": "归肺、胃、大肠经",
+    "application": "1. 风寒感冒，前额头痛；2. 鼻塞鼻渊；3. 带下过多；4. 疮痈肿毒；5. 风湿痹痛",
+    "dosage": "煎服 3～10g；外用适量",
+    "caution": "阴虚血热者忌服"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第一节 发散风寒药",
+    "name": "细辛",
+    "nature_flavor": "辛，温；有小毒",
+    "meridian": "归心、肺、肾经",
+    "application": "1. 风寒感冒，阳虚外感；2. 鼻鼽鼻渊；3. 风寒湿痹；4. 寒饮喘咳",
+    "dosage": "煎服 1～3g；散剂 0.5～1g；外用适量",
+    "caution": "阴虚阳亢头痛、肺热燥咳忌用；反藜芦"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第一节 发散风寒药",
+    "name": "苍耳子",
+    "nature_flavor": "辛、苦，温；有毒",
+    "meridian": "归肺经",
+    "application": "1. 风寒感冒，头身疼痛；2. 鼻渊鼻塞；3. 风湿痹痛，风疹瘙痒",
+    "dosage": "煎服 3～10g；炒去刺减毒",
+    "caution": "血虚头痛不宜；过量易中毒，不可久服"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第二节 发散风热药",
+    "name": "薄荷",
+    "nature_flavor": "辛，凉",
+    "meridian": "归肺、肝经",
+    "application": "1. 风热感冒，温病初起；2. 头痛眩晕，目赤咽痛；3. 麻疹不透；4. 肝郁气滞胸胁胀痛",
+    "dosage": "煎服 3～6g；后下",
+    "caution": "体虚多汗者不宜使用"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第二节 发散风热药",
+    "name": "牛蒡子",
+    "nature_flavor": "辛、苦，寒",
+    "meridian": "归肺、胃经",
+    "application": "1. 风热感冒，咽喉肿痛；2. 麻疹不透；3. 痈肿疮毒，痄腮丹毒；4. 风热咳嗽痰多",
+    "dosage": "煎服 6～12g；炒用寒性缓和",
+    "caution": "脾虚便溏者慎用"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第二节 发散风热药",
+    "name": "蝉蜕",
+    "nature_flavor": "甘，寒",
+    "meridian": "归肺、肝经",
+    "application": "1. 风热感冒，咽痛音哑；2. 麻疹不透，风疹瘙痒；3. 目赤翳障；4. 惊风抽搐、破伤风",
+    "dosage": "煎服 3～6g",
+    "caution": "孕妇慎用"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第二节 发散风热药",
+    "name": "桑叶",
+    "nature_flavor": "甘、苦，寒",
+    "meridian": "归肺、肝经",
+    "application": "1. 风热感冒，肺热燥咳；2. 头晕头痛，目赤昏花；3. 血热出血",
+    "dosage": "煎服 5～10g；蜜炙润肺止咳",
+    "caution": "脾胃虚寒者慎用"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第二节 发散风热药",
+    "name": "菊花",
+    "nature_flavor": "甘、苦，微寒",
+    "meridian": "归肺、肝经",
+    "application": "1. 风热感冒，温病初起；2. 肝阳眩晕，目赤肿痛；3. 疮痈肿毒",
+    "dosage": "煎服 5～10g",
+    "caution": "气虚胃寒，食少泄泻者少用"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第二节 发散风热药",
+    "name": "柴胡",
+    "nature_flavor": "辛、苦，微寒",
+    "meridian": "归肝、胆经",
+    "application": "1. 少阳证往来寒热；2. 肝郁气滞胁痛、月经不调；3. 气虚下陷脱肛、脏器下垂",
+    "dosage": "煎服 3～10g；醋炒疏肝止痛",
+    "caution": "真阴亏损、肝阳上亢者忌服"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第二节 发散风热药",
+    "name": "升麻",
+    "nature_flavor": "辛、微甘，微寒",
+    "meridian": "归肺、脾、胃、大肠经",
+    "application": "1. 风热感冒，阳明头痛；2. 麻疹不透；3. 齿痛口疮，咽喉肿痛；4. 气虚下陷",
+    "dosage": "煎服 3～10g",
+    "caution": "阴虚火旺、麻疹已透者忌用"
+  },
+  {
+    "chapter": "第一章 解表药",
+    "section": "第二节 发散风热药",
+    "name": "葛根",
+    "nature_flavor": "甘、辛，凉",
+    "meridian": "归脾、胃、肺经",
+    "application": "1. 外感发热，项背强痛；2. 麻疹不透；3. 热病口渴，消渴；4. 脾虚泄泻；5. 高血压颈项僵硬",
+    "dosage": "煎服 10～15g；解肌退热生用，止泻煨用",
+    "caution": "虚寒胃寒呕吐者慎用"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第一节 清热泻火药",
+    "name": "石膏",
+    "nature_flavor": "甘、辛，大寒",
+    "meridian": "归肺、胃经",
+    "application": "1. 温热病气分实热；2. 肺热喘咳；3. 胃火牙痛、头痛；4. 煅石膏外用敛疮止血",
+    "dosage": "煎服 15～60g，打碎先煎；外用煅研细末",
+    "caution": "脾胃虚寒、阴虚内热者忌服"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第一节 清热泻火药",
+    "name": "知母",
+    "nature_flavor": "苦、甘，寒",
+    "meridian": "归肺、胃、肾经",
+    "application": "1. 热病烦渴；2. 肺热燥咳；3. 骨蒸潮热；4. 内热消渴，肠燥便秘",
+    "dosage": "煎服 6～12g；盐知母滋肾阴",
+    "caution": "脾虚便溏者不宜使用"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第一节 清热泻火药",
+    "name": "栀子",
+    "nature_flavor": "苦，寒",
+    "meridian": "归心、肺、三焦经",
+    "application": "1. 热病心烦；2. 湿热黄疸；3. 淋证涩痛；4. 血热出血；5. 疮疡肿毒，外伤肿痛",
+    "dosage": "煎服 6～10g；炒焦止血",
+    "caution": "脾虚便溏者慎用"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第一节 清热泻火药",
+    "name": "芦根",
+    "nature_flavor": "甘，寒",
+    "meridian": "归肺、胃经",
+    "application": "1. 热病烦渴；2. 肺热咳嗽，肺痈吐脓；3. 胃热呕哕；4. 热淋涩痛",
+    "dosage": "煎服 15～30g；鲜品加倍",
+    "caution": "脾胃虚寒者慎用"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第二节 清热燥湿药",
+    "name": "黄芩",
+    "nature_flavor": "苦，寒",
+    "meridian": "归肺、胆、脾、大肠、小肠经",
+    "application": "1. 湿温、暑湿，胸闷呕恶；2. 肺热咳嗽；3. 高热烦渴；4. 血热出血；5. 胎热不安",
+    "dosage": "煎服 3～10g；生清热，酒炒清上焦，炒炭止血安胎",
+    "caution": "脾胃虚寒者不宜使用"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第二节 清热燥湿药",
+    "name": "黄连",
+    "nature_flavor": "苦，寒",
+    "meridian": "归心、脾、胃、肝、胆、大肠经",
+    "application": "1. 湿热痞满，呕吐吞酸；2. 泻痢；3. 高热神昏，心烦失眠；4. 血热吐衄；5. 痈肿疖疮，湿疹耳道流脓",
+    "dosage": "煎服 2～5g；外用适量",
+    "caution": "脾胃虚寒、阴虚津伤者慎用"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第二节 清热燥湿药",
+    "name": "黄柏",
+    "nature_flavor": "苦，寒",
+    "meridian": "归肾、膀胱经",
+    "application": "1. 湿热泻痢，黄疸带下；2. 热淋脚气；3. 骨蒸劳热，盗汗遗精；4. 疮疡肿毒，湿疹瘙痒",
+    "dosage": "煎服 3～12g；外用适量",
+    "caution": "脾胃虚寒者忌用"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第二节 清热燥湿药",
+    "name": "龙胆",
+    "nature_flavor": "苦，寒",
+    "meridian": "归肝、胆经",
+    "application": "1. 肝胆实火头痛目赤；2. 湿热黄疸、阴肿阴痒、带下、湿疹；3. 惊风抽搐",
+    "dosage": "煎服 3～6g",
+    "caution": "脾胃虚寒、阴虚津伤者慎用"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第三节 清热解毒药",
+    "name": "金银花",
+    "nature_flavor": "甘，寒",
+    "meridian": "归肺、心、胃经",
+    "application": "1. 痈肿疔疮；2. 喉痹丹毒；3. 风热感冒，温病发热；4. 热毒血痢",
+    "dosage": "煎服 6～15g",
+    "caution": "脾胃虚寒、气虚疮疡脓清者忌用"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第三节 清热解毒药",
+    "name": "连翘",
+    "nature_flavor": "苦，微寒",
+    "meridian": "归肺、心、小肠经",
+    "application": "1. 痈肿疮毒，瘰疬痰核；2. 风热感冒，温病初起；3. 热淋涩痛",
+    "dosage": "煎服 6～15g",
+    "caution": "脾胃虚寒、气虚脓稀者不宜"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第三节 清热解毒药",
+    "name": "蒲公英",
+    "nature_flavor": "苦、甘，寒",
+    "meridian": "归肝、胃经",
+    "application": "1. 乳痈肿痛，各类疮痈；2. 湿热黄疸，热淋；3. 肝火目赤肿痛",
+    "dosage": "煎服 10～15g；外用鲜品捣烂",
+    "caution": "大量服用易致缓泻，脾胃虚寒慎用"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第三节 清热解毒药",
+    "name": "板蓝根",
+    "nature_flavor": "苦，寒",
+    "meridian": "归心、胃经",
+    "application": "1. 外感发热，温病初起；2. 咽喉肿痛，痄腮丹毒；3. 大头瘟疫，痈肿疮毒",
+    "dosage": "煎服 9～15g",
+    "caution": "体虚无实热火毒者忌服"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第四节 清热凉血药",
+    "name": "生地黄",
+    "nature_flavor": "甘，寒",
+    "meridian": "归心、肝、肾经",
+    "application": "1. 热入营血，斑疹吐衄；2. 阴虚内热，骨蒸劳热；3. 津伤口渴，内热消渴，肠燥便秘",
+    "dosage": "煎服 10～15g；鲜品加倍",
+    "caution": "脾虚湿滞、腹满便溏者不宜"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第四节 清热凉血药",
+    "name": "玄参",
+    "nature_flavor": "甘、苦、咸，微寒",
+    "meridian": "归肺、胃、肾经",
+    "application": "1. 温病热入营血；2. 热病伤阴，骨蒸咳嗽；3. 目赤咽痛，瘰疬白喉；4. 痈肿疮毒",
+    "dosage": "煎服 10～15g",
+    "caution": "脾胃虚寒便溏者忌；反藜芦"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第四节 清热凉血药",
+    "name": "牡丹皮",
+    "nature_flavor": "苦、辛，微寒",
+    "meridian": "归心、肝、肾经",
+    "application": "1. 热入血分，斑疹吐衄；2. 温邪伤阴，夜热早凉；3. 瘀血经闭痛经，跌打伤痛；4. 痈肿疮毒",
+    "dosage": "煎服 6～12g；清热生用，活血酒炒",
+    "caution": "血虚有寒、月经过多、孕妇慎用"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第四节 清热凉血药",
+    "name": "赤芍",
+    "nature_flavor": "苦，微寒",
+    "meridian": "归肝经",
+    "application": "1. 热入血分，斑疹吐衄；2. 目赤肿痛，肝郁胁痛；3. 经闭痛经，癥瘕腹痛；4. 痈肿疮疡",
+    "dosage": "煎服 6～12g",
+    "caution": "血虚经闭无瘀者忌；反藜芦"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第五节 清虚热药",
+    "name": "青蒿",
+    "nature_flavor": "苦、辛，寒",
+    "meridian": "归肝、胆经",
+    "application": "1. 温邪伤阴，夜热早凉；2. 阴虚发热，骨蒸劳热；3. 疟疾寒热；4. 暑热外感",
+    "dosage": "煎服 6～12g；不宜久煎；治疟鲜品加倍",
+    "caution": "脾胃虚寒泄泻者忌服"
+  },
+  {
+    "chapter": "第二章 清热药",
+    "section": "第五节 清虚热药",
+    "name": "地骨皮",
+    "nature_flavor": "甘，寒",
+    "meridian": "归肺、肝、肾经",
+    "application": "1. 阴虚潮热盗汗；2. 肺热咳嗽；3. 血热出血；4. 内热消渴",
+    "dosage": "煎服 9～15g",
+    "caution": "外感风寒发热、脾虚便溏者不宜"
+  },
+  {
+    "chapter": "第三章 泻下药",
+    "section": "第一节 攻下积滞药",
+    "name": "大黄",
+    "nature_flavor": "苦，寒",
+    "meridian": "归脾、胃、大肠、肝、心包经",
+    "application": "1. 实热积滞便秘；2. 血热吐衄，目赤肿痛；3. 痈肿疔疮，烧烫伤；4. 瘀血经闭、跌打损伤；5. 湿热黄疸、淋证",
+    "dosage": "煎服 3～15g；泻下生用后下，活血酒制，止血炒炭",
+    "caution": "脾胃虚弱、孕妇、经期、哺乳期妇女禁用"
+  },
+  {
+    "chapter": "第三章 泻下药",
+    "section": "第一节 攻下积滞药",
+    "name": "芒硝",
+    "nature_flavor": "咸、苦，寒",
+    "meridian": "归胃、大肠经",
+    "application": "1. 实热积滞，大便燥结；2. 咽痛口疮，目赤肿痛；3. 乳痈、痔疮肿痛",
+    "dosage": "6～12g，冲入药汁或温水溶化；外用适量",
+    "caution": "孕妇、哺乳期妇女忌用；不宜与三棱同用"
+  },
+  {
+    "chapter": "第三章 泻下药",
+    "section": "第二节 润下药",
+    "name": "火麻仁",
+    "nature_flavor": "甘，平",
+    "meridian": "归脾、胃、大肠经",
+    "application": "老人、体虚、产后津亏肠燥便秘",
+    "dosage": "煎服 10～15g，打碎入煎",
+    "caution": "过量易致恶心呕吐腹泻"
+  },
+  {
+    "chapter": "第三章 泻下药",
+    "section": "第三节 峻下逐水药",
+    "name": "甘遂",
+    "nature_flavor": "苦，寒；有毒",
+    "meridian": "归肺、肾、大肠经",
+    "application": "1. 水肿鼓胀，胸胁停饮；2. 风痰癫痫；3. 痈肿疮毒",
+    "dosage": "入丸散 0.5～1.5g；外用适量；醋制减毒",
+    "caution": "孕妇禁用；虚弱者慎用；反甘草"
+  },
+  {
+    "chapter": "第四章 祛风湿药",
+    "section": "祛风寒湿药",
+    "name": "独活",
+    "nature_flavor": "辛、苦，微温",
+    "meridian": "归肾、膀胱经",
+    "application": "1. 风寒湿痹，下半身腰膝疼痛；2. 风寒夹湿头痛；3. 少阴伏风头痛",
+    "dosage": "煎服 3～10g",
+    "caution": "阴虚血燥者慎用"
+  },
+  {
+    "chapter": "第四章 祛风湿药",
+    "section": "祛风寒湿药",
+    "name": "威灵仙",
+    "nature_flavor": "辛、咸，温",
+    "meridian": "归膀胱经",
+    "application": "1. 风湿痹痛，肢体麻木屈伸不利；2. 骨鲠咽喉；3. 跌打伤痛、头痛牙痛",
+    "dosage": "煎服 6～10g；治骨鲠 30～50g",
+    "caution": "气血虚弱者慎用"
+  },
+  {
+    "chapter": "第四章 祛风湿药",
+    "section": "祛风寒湿药",
+    "name": "木瓜",
+    "nature_flavor": "酸，温",
+    "meridian": "归肝、脾经",
+    "application": "1. 湿痹拘挛，腰膝酸痛；2. 吐泻转筋；3. 脚气水肿；4. 津伤口渴、消化不良",
+    "dosage": "煎服 6～9g",
+    "caution": "胃酸过多者不宜大量服用"
+  },
+  {
+    "chapter": "第四章 祛风湿药",
+    "section": "祛风湿热药",
+    "name": "秦艽",
+    "nature_flavor": "辛、苦，平",
+    "meridian": "归胃、肝、胆经",
+    "application": "1. 风湿痹痛，热痹尤宜；2. 中风半身不遂；3. 骨蒸潮热；4. 湿热黄疸",
+    "dosage": "煎服 3～10g",
+    "caution": "久服耗伤阴血，阴虚者慎用"
+  },
+  {
+    "chapter": "第四章 祛风湿药",
+    "section": "祛风湿热药",
+    "name": "防己（粉防己）",
+    "nature_flavor": "苦，寒",
+    "meridian": "归膀胱、肺经",
+    "application": "1. 风湿痹痛，湿热身痛；2. 水肿脚气，小便不利；3. 湿疹疮毒",
+    "dosage": "煎服 5～10g",
+    "caution": "脾胃虚寒、阴虚盗汗者慎用"
+  },
+  {
+    "chapter": "第四章 祛风湿药",
+    "section": "祛风湿强筋骨药",
+    "name": "桑寄生",
+    "nature_flavor": "苦、甘，平",
+    "meridian": "归肝、肾经",
+    "application": "1. 风湿痹痛，腰膝酸软；2. 肝肾不足，崩漏经多；3. 胎动不安",
+    "dosage": "煎服 9～15g",
+    "caution": "无瘀血者不宜大量久服"
+  },
+  {
+    "chapter": "第四章 祛风湿药",
+    "section": "祛风湿强筋骨药",
+    "name": "五加皮",
+    "nature_flavor": "辛、苦，温",
+    "meridian": "归肝、肾经",
+    "application": "1. 风湿痹痛，筋骨痿软；2. 小儿行迟；3. 水肿脚气",
+    "dosage": "煎服 5～10g；浸酒适量",
+    "caution": "阴虚火旺者慎用"
+  },
+  {
+    "chapter": "第五章 化湿药",
+    "section": "",
+    "name": "广藿香",
+    "nature_flavor": "辛，微温",
+    "meridian": "归脾、胃、肺经",
+    "application": "1. 湿阻中焦脘腹胀满；2. 呕吐；3. 暑湿感冒，湿温初起",
+    "dosage": "煎服 5～10g；鲜品加倍，后下",
+    "caution": "阴虚血燥者不宜"
+  },
+  {
+    "chapter": "第五章 化湿药",
+    "section": "",
+    "name": "佩兰",
+    "nature_flavor": "辛，平",
+    "meridian": "归脾、胃、肺经",
+    "application": "1. 湿阻中焦，口甜口臭；2. 暑湿、湿温",
+    "dosage": "煎服 5～10g；鲜品加倍",
+    "caution": "阴虚气虚者慎用"
+  },
+  {
+    "chapter": "第五章 化湿药",
+    "section": "",
+    "name": "苍术",
+    "nature_flavor": "辛、苦，温",
+    "meridian": "归脾、胃、肝经",
+    "application": "1. 湿阻中焦腹胀呕恶；2. 风湿痹痛；3. 风寒夹湿感冒；4. 夜盲、眼目昏涩",
+    "dosage": "煎服 5～10g",
+    "caution": "阴虚内热、气虚多汗者忌用"
+  },
+  {
+    "chapter": "第五章 化湿药",
+    "section": "",
+    "name": "厚朴",
+    "nature_flavor": "苦、辛，温",
+    "meridian": "归脾、胃、肺、大肠经",
+    "application": "1. 湿阻、食积气滞腹胀；2. 痰饮喘咳",
+    "dosage": "煎服 3～10g；姜汁炙缓和刺激性",
+    "caution": "气虚津亏、孕妇慎用"
+  },
+  {
+    "chapter": "第五章 化湿药",
+    "section": "",
+    "name": "砂仁",
+    "nature_flavor": "辛，温",
+    "meridian": "归脾、胃、肾经",
+    "application": "1. 湿阻脾胃气滞；2. 脾胃虚寒吐泻；3. 妊娠恶阻、胎动不安",
+    "dosage": "煎服 3～6g，后下",
+    "caution": "阴虚火旺者慎用"
+  },
+  {
+    "chapter": "第六章 利水渗湿药",
+    "section": "利水消肿药",
+    "name": "茯苓",
+    "nature_flavor": "甘、淡，平",
+    "meridian": "归心、肺、脾、肾经",
+    "application": "1. 水肿尿少；2. 痰饮眩悸；3. 脾虚食少便溏；4. 心神不安，惊悸失眠",
+    "dosage": "煎服 10～15g；安神用茯神",
+    "caution": "虚寒精滑者忌服"
+  },
+  {
+    "chapter": "第六章 利水渗湿药",
+    "section": "利水消肿药",
+    "name": "薏苡仁",
+    "nature_flavor": "甘、淡，凉",
+    "meridian": "归脾、胃、肺经",
+    "application": "1. 水肿脚气；2. 小便不利；3. 脾虚泄泻；4. 湿痹拘挛；5. 肺痈肠痈",
+    "dosage": "煎服 10～30g；健脾炒用",
+    "caution": "孕妇慎用"
+  },
+  {
+    "chapter": "第六章 利水渗湿药",
+    "section": "利水消肿药",
+    "name": "猪苓",
+    "nature_flavor": "甘、淡，平",
+    "meridian": "归肾、膀胱经",
+    "application": "水肿，小便不利，淋浊带下",
+    "dosage": "煎服 6～12g",
+    "caution": "无水湿、肾虚滑精者不宜"
+  },
+  {
+    "chapter": "第六章 利水渗湿药",
+    "section": "利尿通淋药",
+    "name": "车前子",
+    "nature_flavor": "甘，寒",
+    "meridian": "归肝、肾、肺、小肠经",
+    "application": "1. 热淋石淋，水肿尿少；2. 泄泻；3. 目赤肿痛；4. 肺热咳嗽痰多",
+    "dosage": "煎服 9～15g，包煎",
+    "caution": "肾虚滑精者慎用"
+  },
+  {
+    "chapter": "第六章 利水渗湿药",
+    "section": "利尿通淋药",
+    "name": "滑石",
+    "nature_flavor": "甘、淡，寒",
+    "meridian": "归膀胱、肺、胃经",
+    "application": "1. 热淋石淋；2. 暑湿泄泻；3. 湿疹痱子外用",
+    "dosage": "煎服 10～20g，包煎；外用适量",
+    "caution": "脾虚热病伤津者慎用；孕妇慎用"
+  },
+  {
+    "chapter": "第六章 利水渗湿药",
+    "section": "利湿退黄药",
+    "name": "茵陈",
+    "nature_flavor": "苦、辛，微寒",
+    "meridian": "归脾、胃、肝、胆经",
+    "application": "1. 黄疸；2. 湿温湿疹瘙痒",
+    "dosage": "煎服 6～15g；外用煎汤熏洗",
+    "caution": "蓄血发黄、血虚萎黄者慎用"
+  },
+  {
+    "chapter": "第六章 利水渗湿药",
+    "section": "利湿退黄药",
+    "name": "金钱草",
+    "nature_flavor": "甘、咸，微寒",
+    "meridian": "归肝、胆、肾、膀胱经",
+    "application": "1. 湿热黄疸；2. 石淋热淋；3. 痈肿疔疮，蛇虫咬伤",
+    "dosage": "煎服 15～60g；鲜品加倍",
+    "caution": "脾胃虚寒者慎用"
+  },
+  {
+    "chapter": "第七章 温里药",
+    "section": "",
+    "name": "附子",
+    "nature_flavor": "辛、甘，大热；有毒",
+    "meridian": "归心、肾、脾经",
+    "application": "1. 亡阳厥逆，脉微欲绝；2. 阳虚诸证；3. 寒痹疼痛",
+    "dosage": "煎服 3～15g，先煎 30～60 分钟减毒",
+    "caution": "孕妇禁用；阴虚阳亢者忌；反半夏、瓜蒌、贝母、白蔹、白及"
+  },
+  {
+    "chapter": "第七章 温里药",
+    "section": "",
+    "name": "干姜",
+    "nature_flavor": "辛，热",
+    "meridian": "归脾、胃、肾、心、肺经",
+    "application": "1. 脘腹冷痛，呕吐泄泻；2. 亡阳厥逆；3. 寒饮喘咳",
+    "dosage": "煎服 3～10g",
+    "caution": "阴虚内热、血热妄行者忌用"
+  },
+  {
+    "chapter": "第七章 温里药",
+    "section": "",
+    "name": "肉桂",
+    "nature_flavor": "辛、甘，大热",
+    "meridian": "归肾、脾、心、肝经",
+    "application": "1. 肾阳不足，命门火衰；2. 脘腹冷痛，寒疝腹痛；3. 痛经经闭；4. 虚阳上浮；5. 鼓舞气血生长",
+    "dosage": "煎服 1～5g，后下；研末冲服 0.5～1.5g",
+    "caution": "阴虚火旺、有出血倾向、孕妇慎用"
+  },
+  {
+    "chapter": "第七章 温里药",
+    "section": "",
+    "name": "吴茱萸",
+    "nature_flavor": "辛、苦，热；有小毒",
+    "meridian": "归肝、脾、胃、肾经",
+    "application": "1. 寒凝肝脉头痛、痛经；2. 胃寒呕吐吞酸；3. 虚寒泄泻；4. 寒湿脚气",
+    "dosage": "煎服 2～5g；外用适量",
+    "caution": "阴虚火旺者忌服；不宜长期大量服用"
+  },
+  {
+    "chapter": "第八章 理气药",
+    "section": "",
+    "name": "陈皮",
+    "nature_flavor": "辛、苦，温",
+    "meridian": "归脾、肺经",
+    "application": "1. 脾胃气滞腹胀呕吐；2. 痰湿寒痰咳嗽",
+    "dosage": "煎服 3～10g",
+    "caution": "阴虚燥咳、吐血者慎用"
+  },
+  {
+    "chapter": "第八章 理气药",
+    "section": "",
+    "name": "枳实",
+    "nature_flavor": "苦、辛、酸，微寒",
+    "meridian": "归脾、胃、大肠经",
+    "application": "1. 食积气滞，痞满胀痛；2. 痰浊胸痹；3. 脏器下垂",
+    "dosage": "煎服 3～10g",
+    "caution": "孕妇慎用"
+  },
+  {
+    "chapter": "第八章 理气药",
+    "section": "",
+    "name": "木香",
+    "nature_flavor": "辛、苦，温",
+    "meridian": "归脾、胃、大肠、三焦、胆经",
+    "application": "1. 脾胃气滞脘腹胀痛；2. 泻痢后重；3. 黄疸胁痛",
+    "dosage": "煎服 3～6g；生用行气，煨实肠止泻",
+    "caution": "阴虚津亏者慎用"
+  },
+  {
+    "chapter": "第八章 理气药",
+    "section": "",
+    "name": "香附",
+    "nature_flavor": "辛、微苦、微甘，平",
+    "meridian": "归肝、脾、三焦经",
+    "application": "1. 肝郁气滞胁痛、胃痛；2. 月经不调，痛经乳房胀痛",
+    "dosage": "煎服 6～10g；醋炙增强止痛",
+    "caution": "气虚无滞者不宜久服"
+  },
+  {
+    "chapter": "第八章 理气药",
+    "section": "",
+    "name": "薤白",
+    "nature_flavor": "辛、苦，温",
+    "meridian": "归心、肺、胃、大肠经",
+    "application": "1. 胸痹心痛；2. 脘腹痞满胀痛；3. 泻痢后重",
+    "dosage": "煎服 5～10g",
+    "caution": "阴虚发热、气虚者慎用"
+  },
+  {
+    "chapter": "第九章 消食药",
+    "section": "",
+    "name": "山楂",
+    "nature_flavor": "酸、甘，微温",
+    "meridian": "归脾、胃、肝经",
+    "application": "1. 肉食积滞腹胀；2. 泻痢腹痛；3. 瘀血痛经、产后瘀阻；4. 高脂血症",
+    "dosage": "煎服 10～15g；消食生用，化瘀炒炭",
+    "caution": "脾胃虚弱、胃酸过多者慎用"
+  },
+  {
+    "chapter": "第九章 消食药",
+    "section": "",
+    "name": "六神曲",
+    "nature_flavor": "甘、辛，温",
+    "meridian": "归脾、胃经",
+    "application": "饮食积滞，尤宜酒食陈腐积滞",
+    "dosage": "煎服 6～15g",
+    "caution": "脾阴虚、胃火盛者不宜"
+  },
+  {
+    "chapter": "第九章 消食药",
+    "section": "",
+    "name": "麦芽",
+    "nature_flavor": "甘，平",
+    "meridian": "归脾、胃、肝经",
+    "application": "1. 米面薯芋食滞；2. 断乳乳房胀痛；3. 肝气郁滞胁痛",
+    "dosage": "煎服 10～15g；回乳 30～120g",
+    "caution": "哺乳期妇女不宜大量使用"
+  },
+  {
+    "chapter": "第九章 消食药",
+    "section": "",
+    "name": "鸡内金",
+    "nature_flavor": "甘，平",
+    "meridian": "归脾、胃、小肠、膀胱经",
+    "application": "1. 食积腹胀，小儿疳积；2. 遗精遗尿；3. 石淋、胆结石",
+    "dosage": "煎服 3～10g；研末服 1.5～3g（效更佳）",
+    "caution": "脾虚无积者慎用"
+  },
+  {
+    "chapter": "第十章 止血药",
+    "section": "凉血止血",
+    "name": "小蓟",
+    "nature_flavor": "甘、苦，凉",
+    "meridian": "归心、肝经",
+    "application": "1. 血热出血（吐血、尿血、崩漏）；2. 热毒疮痈",
+    "dosage": "煎服 5～12g；鲜品加倍",
+    "caution": "脾胃虚寒者慎用"
+  },
+  {
+    "chapter": "第十章 止血药",
+    "section": "凉血止血",
+    "name": "地榆",
+    "nature_flavor": "苦、酸、涩，微寒",
+    "meridian": "归肝、大肠经",
+    "application": "1. 血热便血、痔血、崩漏；2. 水火烫伤、湿疹疮疡",
+    "dosage": "煎服 9～15g；外用炒炭研末",
+    "caution": "大面积烧伤不宜外用，易致中毒；虚寒出血慎用"
+  },
+  {
+    "chapter": "第十章 止血药",
+    "section": "化瘀止血",
+    "name": "三七",
+    "nature_flavor": "甘、微苦，温",
+    "meridian": "归肝、胃经",
+    "application": "1. 各类内外出血；2. 瘀血肿痛，跌打损伤",
+    "dosage": "煎服 3～9g；研末 1～3g；外用适量",
+    "caution": "孕妇慎用"
+  },
+  {
+    "chapter": "第十章 止血药",
+    "section": "收敛止血",
+    "name": "白及",
+    "nature_flavor": "苦、甘、涩，微寒",
+    "meridian": "归肺、胃、肝经",
+    "application": "1. 肺胃出血；2. 疮疡肿毒，皮肤皲裂",
+    "dosage": "煎服 6～15g；研末 2～5g",
+    "caution": "反乌头；外感咳血、瘀血者不宜单用"
+  },
+  {
+    "chapter": "第十章 止血药",
+    "section": "温经止血",
+    "name": "艾叶",
+    "nature_flavor": "辛、苦，温；有小毒",
+    "meridian": "归肝、脾、肾经",
+    "application": "1. 虚寒出血，崩漏；2. 少腹冷痛，宫寒不孕；3. 湿疹瘙痒；4. 温灸",
+    "dosage": "煎服 3～9g；外用熏洗、艾灸",
+    "caution": "阴虚血热者慎用"
+  },
+  {
+    "chapter": "第十一章 活血化瘀药",
+    "section": "活血止痛",
+    "name": "川芎",
+    "nature_flavor": "辛，温",
+    "meridian": "归肝、胆、心包经",
+    "application": "1. 血瘀气滞诸痛；2. 头痛，风湿痹痛",
+    "dosage": "煎服 3～10g",
+    "caution": "阴虚火旺、月经过多、孕妇慎用"
+  },
+  {
+    "chapter": "第十一章 活血化瘀药",
+    "section": "活血止痛",
+    "name": "延胡索",
+    "nature_flavor": "辛、苦，温",
+    "meridian": "归肝、脾经",
+    "application": "气血瘀滞一身诸痛（胸痹、胃痛、痛经、跌打痛）",
+    "dosage": "煎服 3～10g；研末 1.5～3g；醋炙止痛力强",
+    "caution": "血虚无瘀者不宜"
+  },
+  {
+    "chapter": "第十一章 活血化瘀药",
+    "section": "活血调经",
+    "name": "丹参",
+    "nature_flavor": "苦，微寒",
+    "meridian": "归心、肝经",
+    "application": "1. 瘀血月经不调、痛经；2. 胸痹心痛，脘腹刺痛；3. 疮痈肿毒；4. 心烦失眠",
+    "dosage": "煎服 10～15g",
+    "caution": "孕妇慎用；反藜芦"
+  },
+  {
+    "chapter": "第十一章 活血化瘀药",
+    "section": "活血调经",
+    "name": "红花",
+    "nature_flavor": "辛，温",
+    "meridian": "归心、肝经",
+    "application": "1. 瘀血经闭痛经；2. 胸痹瘀痛，跌打瘀肿；3. 斑疹色暗",
+    "dosage": "煎服 3～10g",
+    "caution": "孕妇、月经过多者禁用"
+  },
+  {
+    "chapter": "第十一章 活血化瘀药",
+    "section": "破血消癥",
+    "name": "莪术",
+    "nature_flavor": "辛、苦，温",
+    "meridian": "归肝、脾经",
+    "application": "1. 癥瘕积聚；2. 瘀血经闭；3. 食积脘腹胀痛",
+    "dosage": "煎服 6～9g",
+    "caution": "孕妇、月经过多者禁用"
+  },
+  {
+    "chapter": "第十二章 化痰止咳平喘药",
+    "section": "温化寒痰",
+    "name": "半夏",
+    "nature_flavor": "辛，温；有毒",
+    "meridian": "归脾、胃、肺经",
+    "application": "1. 湿痰寒痰咳嗽；2. 呕吐反胃；3. 胸脘痞闷，梅核气；4. 痈疽肿毒外用",
+    "dosage": "煎服 3～9g；法半夏燥湿，姜半夏止呕，竹沥半夏清痰",
+    "caution": "阴虚燥咳、出血证忌；反乌头；生品外用，不可内服"
+  },
+  {
+    "chapter": "第十二章 化痰止咳平喘药",
+    "section": "清化热痰",
+    "name": "桔梗",
+    "nature_flavor": "苦、辛，平",
+    "meridian": "归肺经",
+    "application": "1. 咳嗽痰多，胸闷不畅；2. 咽痛音哑；3. 肺痈吐脓",
+    "dosage": "煎服 3～10g",
+    "caution": "呕吐、呛咳、阴虚咯血慎用"
+  },
+  {
+    "chapter": "第十二章 化痰止咳平喘药",
+    "section": "清化热痰",
+    "name": "瓜蒌",
+    "nature_flavor": "甘、微苦，寒",
+    "meridian": "归肺、胃、大肠经",
+    "application": "1. 肺热燥痰；2. 胸痹心痛；3. 肠燥便秘",
+    "dosage": "煎服 9～15g",
+    "caution": "脾胃虚寒便溏忌；反乌头"
+  },
+  {
+    "chapter": "第十二章 化痰止咳平喘药",
+    "section": "止咳平喘",
+    "name": "苦杏仁",
+    "nature_flavor": "苦，微温；有小毒",
+    "meridian": "归肺、大肠经",
+    "application": "1. 咳嗽气喘；2. 肠燥便秘",
+    "dosage": "煎服 5～10g，打碎入煎",
+    "caution": "婴儿慎用；阴虚咳喘不宜；不可过量防中毒"
+  },
+  {
+    "chapter": "第十二章 化痰止咳平喘药",
+    "section": "止咳平喘",
+    "name": "紫苏子",
+    "nature_flavor": "辛，温",
+    "meridian": "归肺、大肠经",
+    "application": "1. 痰壅气逆咳嗽；2. 肠燥便秘",
+    "dosage": "煎服 5～10g，打碎",
+    "caution": "阴虚咳喘、脾虚便溏慎用"
+  },
+  {
+    "chapter": "第十三章 安神药",
+    "section": "重镇安神",
+    "name": "朱砂",
+    "nature_flavor": "甘，微寒；有毒",
+    "meridian": "归心经",
+    "application": "1. 心悸易惊，失眠多梦；2. 惊风癫痫；3. 疮疡肿毒外用",
+    "dosage": "入丸散 0.1～0.5g；不入煎剂；外用适量",
+    "caution": "不可大量久服；肝肾功能不全禁用；忌火煅"
+  },
+  {
+    "chapter": "第十三章 安神药",
+    "section": "重镇安神",
+    "name": "磁石",
+    "nature_flavor": "咸，寒",
+    "meridian": "归心、肝、肾经",
+    "application": "1. 心神不宁，惊悸失眠；2. 肝阳眩晕；3. 耳鸣耳聋；4. 肾虚气喘",
+    "dosage": "煎服 9～30g，打碎先煎",
+    "caution": "脾胃虚弱者慎用"
+  },
+  {
+    "chapter": "第十三章 安神药",
+    "section": "养心安神",
+    "name": "酸枣仁",
+    "nature_flavor": "甘、酸，平",
+    "meridian": "归肝、胆、心经",
+    "application": "1. 虚烦不眠，惊悸多梦；2. 体虚多汗；3. 津伤口渴",
+    "dosage": "煎服 10～15g；研末 1.5～2g",
+    "caution": "实热郁火失眠慎用"
+  },
+  {
+    "chapter": "第十三章 安神药",
+    "section": "养心安神",
+    "name": "远志",
+    "nature_flavor": "苦、辛，温",
+    "meridian": "归心、肾、肺经",
+    "application": "1. 心肾不交失眠健忘；2. 惊悸癫痫；3. 痰多咳嗽；4. 疮痈肿毒",
+    "dosage": "煎服 3～10g",
+    "caution": "胃溃疡、胃炎慎用"
+  },
+  {
+    "chapter": "第十四章 平肝息风药",
+    "section": "平抑肝阳",
+    "name": "石决明",
+    "nature_flavor": "咸，寒",
+    "meridian": "归肝经",
+    "application": "1. 肝阳上亢头晕目眩；2. 目赤翳障；3. 煅用收敛止血制酸",
+    "dosage": "煎服 6～20g，先煎",
+    "caution": "脾胃虚寒、食少便溏慎用"
+  },
+  {
+    "chapter": "第十四章 平肝息风药",
+    "section": "平抑肝阳",
+    "name": "白芍",
+    "nature_flavor": "苦、酸，微寒",
+    "meridian": "归肝、脾经",
+    "application": "1. 血虚萎黄，月经不调；2. 肝阳眩晕；3. 胁痛、四肢挛急疼痛；4. 自汗盗汗",
+    "dosage": "煎服 6～15g；养血炒白芍，平肝生白芍",
+    "caution": "阳衰虚寒腹痛便溏忌；反藜芦"
+  },
+  {
+    "chapter": "第十四章 平肝息风药",
+    "section": "息风止痉",
+    "name": "羚羊角",
+    "nature_flavor": "咸，寒",
+    "meridian": "归肝、心经",
+    "application": "1. 肝风内动，惊痫抽搐；2. 肝阳眩晕；3. 温热病高热神昏；4. 热毒发斑",
+    "dosage": "煎服 1～3g，先煎；磨汁 0.3～0.6g",
+    "caution": "脾虚慢惊者忌用"
+  },
+  {
+    "chapter": "第十四章 平肝息风药",
+    "section": "息风止痉",
+    "name": "牛黄",
+    "nature_flavor": "甘，凉；有小毒",
+    "meridian": "归心、肝经",
+    "application": "1. 热病神昏；2. 惊风癫痫；3. 口舌咽喉疮痈",
+    "dosage": "入丸散 0.15～0.35g；不入煎剂",
+    "caution": "脾胃虚寒慎用；孕妇慎用"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补气药",
+    "name": "人参",
+    "nature_flavor": "甘、微苦，微温",
+    "meridian": "归脾、肺、心、肾经",
+    "application": "1. 元气虚脱；2. 肺脾心肾气虚；3. 津伤口渴，消渴；4. 气血不足失眠",
+    "dosage": "煎服 3～9g；挽救虚脱 15～30g；文火另煎兑服；研末 1～2g",
+    "caution": "实证、热证忌；不宜与藜芦、五灵脂同用"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补气药",
+    "name": "黄芪",
+    "nature_flavor": "甘，微温",
+    "meridian": "归脾、肺经",
+    "application": "1. 气虚乏力，食少便溏；2. 中气下陷脏器下垂；3. 气虚自汗；4. 气血两虚；5. 疮疡久不收口；6. 气虚水肿",
+    "dosage": "煎服 9～30g；补气升阳蜜炙",
+    "caution": "表实邪盛、气滞湿阻、疮疡初起热毒盛者不宜"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补气药",
+    "name": "白术",
+    "nature_flavor": "甘、苦，温",
+    "meridian": "归脾、胃经",
+    "application": "1. 脾虚食少腹胀便溏；2. 气虚自汗；3. 脾虚水肿；4. 脾虚胎动不安",
+    "dosage": "煎服 6～15g；燥湿生用，健脾止泻炒用",
+    "caution": "阴虚燥渴、气滞腹胀者忌"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补气药",
+    "name": "甘草",
+    "nature_flavor": "甘，平",
+    "meridian": "归心、肺、脾、胃经",
+    "application": "1. 心气不足心悸；2. 脾胃虚弱；3. 咳喘痰多；4. 脘腹四肢挛急疼痛；5. 解毒调和诸药",
+    "dosage": "煎服 2～10g；清热解毒生用，补中缓急炙用",
+    "caution": "湿盛胀满水肿不宜；不可久服量大；反海藻、大戟、甘遂、芫花"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补血药",
+    "name": "当归",
+    "nature_flavor": "甘、辛，温",
+    "meridian": "归肝、心、脾经",
+    "application": "1. 血虚诸证；2. 血瘀月经不调、痛经；3. 虚寒腹痛，跌打痹痛；4. 痈疽疮疡；5. 肠燥便秘",
+    "dosage": "煎服 6～12g；补血当归身，活血当归尾",
+    "caution": "湿盛中满、大便溏泄者慎用"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补血药",
+    "name": "熟地黄",
+    "nature_flavor": "甘，微温",
+    "meridian": "归肝、肾经",
+    "application": "1. 血虚萎黄心悸；2. 肝肾阴虚腰膝酸软、潮热盗汗、须发早白",
+    "dosage": "煎服 10～30g",
+    "caution": "脾胃虚弱、气滞痰多、腹满便溏忌服"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补血药",
+    "name": "制何首乌",
+    "nature_flavor": "苦、甘、涩，微温",
+    "meridian": "归肝、肾经",
+    "application": "1. 精血亏虚头晕眼花，须发早白；2. 腰膝酸软；生首乌解毒、截疟、润肠",
+    "dosage": "煎服 10～30g；补益用制首乌",
+    "caution": "生首乌有毒；大便溏泄、痰湿重者忌"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补阴药",
+    "name": "北沙参",
+    "nature_flavor": "甘、微苦，微寒",
+    "meridian": "归肺、胃经",
+    "application": "1. 肺阴虚燥咳，干咳少痰、咽干音哑；2. 胃阴虚津亏，口干舌燥、饥不欲食",
+    "dosage": "煎服 5～12g",
+    "caution": "风寒咳嗽、痰湿咳嗽忌服；反藜芦"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补阴药",
+    "name": "麦冬（麦门冬）",
+    "nature_flavor": "甘、微苦，微寒",
+    "meridian": "归心、肺、胃经",
+    "application": "1. 肺燥干咳，阴虚劳嗽；2. 胃阴不足，口干消渴；3. 心阴不足，心烦失眠、心悸健忘；4. 肠燥津亏便秘",
+    "dosage": "煎服 6～12g",
+    "caution": "脾虚便溏、痰湿咳喘者慎用"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补阴药",
+    "name": "百合",
+    "nature_flavor": "甘，微寒",
+    "meridian": "归心、肺经",
+    "application": "1. 肺阴虚燥咳、劳嗽咯血；2. 虚烦惊悸、失眠多梦、百合病",
+    "dosage": "煎服 6～12g；蜜炙润肺力更佳",
+    "caution": "风寒痰嗽、中寒便溏者忌服"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补阴药",
+    "name": "枸杞子",
+    "nature_flavor": "甘，平",
+    "meridian": "归肝、肾经",
+    "application": "1. 肝肾阴虚，头晕目眩、视力减退；2. 腰膝酸软、须发早白；3. 内热消渴；4. 血虚萎黄",
+    "dosage": "煎服 6～12g，可直接嚼服",
+    "caution": "脾虚湿盛、大便溏薄者慎用"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补阴药",
+    "name": "女贞子",
+    "nature_flavor": "甘、苦，凉",
+    "meridian": "归肝、肾经",
+    "application": "1. 肝肾阴虚，眩晕耳鸣、目暗不明；2. 须发早白；3. 阴虚潮热盗汗",
+    "dosage": "煎服 6～12g；酒蒸后补肝肾作用增强",
+    "caution": "脾胃虚寒泄泻者不宜服用"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补阴药",
+    "name": "龟甲（龟板）",
+    "nature_flavor": "甘、咸，微寒",
+    "meridian": "归肝、肾、心经",
+    "application": "1. 肝肾阴虚，骨蒸潮热、眩晕耳鸣；2. 肾虚筋骨痿软、小儿囟门不合；3. 阴虚血热崩漏月经过多；4. 心虚惊悸、失眠健忘",
+    "dosage": "煎服 9～24g，打碎先煎；滋阴潜阳生用，止血醋淬",
+    "caution": "脾胃虚寒、湿盛便溏者忌用；孕妇慎用"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补阴药",
+    "name": "鳖甲",
+    "nature_flavor": "咸，微寒",
+    "meridian": "归肝、肾经",
+    "application": "1. 阴虚发热、骨蒸劳热、无汗骨蒸；2. 肝阳上亢头晕目眩；3. 癥瘕积聚、久疟疟母",
+    "dosage": "煎服 9～24g，打碎先煎；软坚散结醋炙",
+    "caution": "脾胃虚寒、食少便溏、孕妇禁用"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补阳药",
+    "name": "鹿茸",
+    "nature_flavor": "甘、咸，温",
+    "meridian": "归肾、肝经",
+    "application": "1. 肾阳不足，精血亏虚，畏寒肢冷、阳痿滑精；2. 筋骨痿软，小儿发育迟缓；3. 冲任虚寒，崩漏带下；4. 阴疽内陷，久溃不敛",
+    "dosage": "研末冲服 1～2g；入丸散；不入汤剂",
+    "caution": "阴虚阳亢、实热、痰火内热、血热出血者禁用；从小剂量缓补，不可骤用大量"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补阳药",
+    "name": "杜仲",
+    "nature_flavor": "甘，温",
+    "meridian": "归肝、肾经",
+    "application": "1. 肝肾不足，腰膝酸痛、筋骨无力；2. 肝肾亏虚胎动不安、胎漏下血；3. 肝阳上亢眩晕头痛",
+    "dosage": "煎服 6～10g；盐水炒增强补肝肾之力",
+    "caution": "阴虚火旺者慎用"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补阳药",
+    "name": "续断",
+    "nature_flavor": "苦、甘、辛，微温",
+    "meridian": "归肝、肾经",
+    "application": "1. 肝肾不足腰膝酸软；2. 风湿痹痛；3. 跌扑损伤，筋伤骨折；4. 冲任失调，崩漏、胎动不安",
+    "dosage": "煎服 9～15g；酒炒活血疗伤，盐炒补肝肾安胎",
+    "caution": "初痢实热者不宜单用"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补阳药",
+    "name": "菟丝子",
+    "nature_flavor": "甘，温",
+    "meridian": "归肝、肾、脾经",
+    "application": "1. 肾虚腰痛，阳痿遗精、尿频带下；2. 肝肾不足目暗不明；3. 脾虚便溏；4. 肝肾亏虚胎动不安",
+    "dosage": "煎服 6～12g",
+    "caution": "阴虚火旺、大便燥结者不宜大量服用"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补阳药",
+    "name": "淫羊藿（仙灵脾）",
+    "nature_flavor": "辛、甘，温",
+    "meridian": "归肝、肾经",
+    "application": "1. 肾阳不足，阳痿遗精、腰膝冷痛；2. 风寒湿痹、肢体麻木拘挛",
+    "dosage": "煎服 6～10g；亦可浸酒",
+    "caution": "阴虚火旺者忌服"
+  },
+  {
+    "chapter": "第十五章 补虚药",
+    "section": "补阳药",
+    "name": "巴戟天",
+    "nature_flavor": "甘、辛，微温",
+    "meridian": "归肾、肝经",
+    "application": "1. 肾阳亏虚，阳痿遗精、宫冷不孕；2. 风湿痹痛，腰膝冷痛",
+    "dosage": "煎服 3～10g；盐水炙减燥性",
+    "caution": "阴虚火旺、有热象者不宜服用"
+  },
+  {
+    "chapter": "第十六章 收涩药",
+    "section": "第一节 固表止汗药",
+    "name": "麻黄根",
+    "nature_flavor": "甘、微涩，平",
+    "meridian": "归心、肺经",
+    "application": "气虚自汗、阴虚盗汗，专收敛止汗",
+    "dosage": "煎服 3～9g；外用研粉扑身止汗",
+    "caution": "有表邪出汗者忌用"
+  },
+  {
+    "chapter": "第十六章 收涩药",
+    "section": "第一节 固表止汗药",
+    "name": "浮小麦",
+    "nature_flavor": "甘，凉",
+    "meridian": "归心经",
+    "application": "1. 气虚自汗、阴虚盗汗；2. 骨蒸劳热",
+    "dosage": "煎服 15～30g",
+    "caution": "无汗、表邪未净者不宜使用"
+  },
+  {
+    "chapter": "第十六章 收涩药",
+    "section": "第二节 敛肺涩肠药",
+    "name": "五味子",
+    "nature_flavor": "酸、甘，温",
+    "meridian": "归肺、心、肾经",
+    "application": "1. 久咳虚喘；2. 自汗盗汗；3. 遗精滑精；4. 久泻不止；5. 津伤口渴、消渴；6. 心悸失眠多梦",
+    "dosage": "煎服 2～6g；研末 1～3g",
+    "caution": "外感咳嗽、内有实热、痧疹初发者忌服"
+  },
+  {
+    "chapter": "第十六章 收涩药",
+    "section": "第二节 敛肺涩肠药",
+    "name": "乌梅",
+    "nature_flavor": "酸、涩，平",
+    "meridian": "归肝、脾、肺、大肠经",
+    "application": "1. 肺虚久咳少痰；2. 久泻久痢；3. 虚热消渴；4. 蛔厥腹痛呕吐；5. 便血尿血",
+    "dosage": "煎服 6～12g；止血炒炭",
+    "caution": "外感咳嗽、湿热泻痢初期忌用"
+  },
+  {
+    "chapter": "第十六章 收涩药",
+    "section": "第二节 敛肺涩肠药",
+    "name": "五倍子",
+    "nature_flavor": "酸、涩，寒",
+    "meridian": "归肺、大肠、肾经",
+    "application": "1. 肺虚久咳、肺热痰嗽；2. 久泻久痢；3. 自汗盗汗；4. 遗精滑精；5. 出血；6. 湿疮肿毒外用",
+    "dosage": "煎服 3～9g；入丸散 1～1.5g；外用适量",
+    "caution": "外感咳嗽、湿热泻痢者忌服"
+  },
+  {
+    "chapter": "第十六章 收涩药",
+    "section": "第二节 敛肺涩肠药",
+    "name": "诃子",
+    "nature_flavor": "苦、酸、涩，平",
+    "meridian": "归肺、大肠经",
+    "application": "1. 久咳、失音咽痛；2. 久泻久痢、便血脱肛",
+    "dosage": "煎服 3～10g；生用利咽开音，煨用涩肠止泻",
+    "caution": "外感咳嗽、湿热泻痢初起忌服"
+  },
+  {
+    "chapter": "第十六章 收涩药",
+    "section": "第二节 敛肺涩肠药",
+    "name": "肉豆蔻",
+    "nature_flavor": "辛，温",
+    "meridian": "归脾、胃、大肠经",
+    "application": "1. 虚寒久泻，五更泄泻；2. 胃寒胀痛、食少呕吐",
+    "dosage": "煎服 3～10g；煨制去油减毒，增强止泻",
+    "caution": "湿热泻痢、阴虚火旺者忌用；生品有毒不可久服"
+  },
+  {
+    "chapter": "第十六章 收涩药",
+    "section": "第三节 固精缩尿止带药",
+    "name": "山茱萸",
+    "nature_flavor": "酸、甘，微温",
+    "meridian": "归肝、肾经",
+    "application": "1. 肝肾亏虚头晕耳鸣、腰膝酸软；2. 遗精滑精、尿频遗尿；3. 崩漏带下；4. 大汗虚脱、内热消渴",
+    "dosage": "煎服 6～12g",
+    "caution": "命门火炽、素有湿热、小便淋涩者不宜使用"
+  },
+  {
+    "chapter": "第十六章 收涩药",
+    "section": "第三节 固精缩尿止带药",
+    "name": "金樱子",
+    "nature_flavor": "酸、甘、涩，平",
+    "meridian": "归肾、膀胱、大肠经",
+    "application": "1. 遗精滑精、尿频遗尿；2. 带下过多；3. 久泻久痢",
+    "dosage": "煎服 6～12g",
+    "caution": "实热、湿热者不宜单用"
+  },
+  {
+    "chapter": "第十六章 收涩药",
+    "section": "第三节 固精缩尿止带药",
+    "name": "芡实",
+    "nature_flavor": "甘、涩，平",
+    "meridian": "归脾、肾经",
+    "application": "1. 肾虚遗精滑精、小便不禁、带下；2. 脾虚久泻、食欲不振",
+    "dosage": "煎服 9～15g",
+    "caution": "大小便不利者慎用"
+  },
+  {
+    "chapter": "第十六章 收涩药",
+    "section": "第三节 固精缩尿止带药",
+    "name": "莲子",
+    "nature_flavor": "甘、涩，平",
+    "meridian": "归脾、肾、心经",
+    "application": "1. 脾虚泄泻、食欲不振；2. 肾虚遗精滑精；3. 带下清稀；4. 虚烦心悸、失眠多梦",
+    "dosage": "煎服 6～15g",
+    "caution": "中满腹胀、大便燥结者慎用"
+  },
+  {
+    "chapter": "第十七章 开窍药",
+    "section": "",
+    "name": "麝香",
+    "nature_flavor": "辛，温；有小毒",
+    "meridian": "归心、脾经",
+    "application": "1. 闭证神昏（寒闭、热闭均可）；2. 瘀血经闭、癥瘕、胸痹心痛、跌打损伤；3. 痈肿瘰疬、咽喉肿痛",
+    "dosage": "入丸散 0.03～0.1g；不入汤剂；外用适量",
+    "caution": "孕妇禁用；虚脱脱证忌用"
+  },
+  {
+    "chapter": "第十七章 开窍药",
+    "section": "",
+    "name": "冰片",
+    "nature_flavor": "辛、苦，微寒",
+    "meridian": "归心、脾、肺经",
+    "application": "1. 热病神昏、惊厥；2. 目赤肿痛、喉痹口疮；3. 疮疡肿痛、烧烫伤",
+    "dosage": "入丸散 0.15～0.3g；不入煎剂；外用调敷",
+    "caution": "孕妇慎用；气血虚弱者不宜久服"
+  },
+  {
+    "chapter": "第十七章 开窍药",
+    "section": "",
+    "name": "苏合香",
+    "nature_flavor": "辛，温",
+    "meridian": "归心、脾经",
+    "application": "1. 寒闭神昏；2. 胸痹心痛、胸腹冷痛满闷",
+    "dosage": "入丸散 0.3～1g；不入煎剂",
+    "caution": "阴虚火旺、血热妄行、孕妇慎用"
+  },
+  {
+    "chapter": "第十七章 开窍药",
+    "section": "",
+    "name": "石菖蒲",
+    "nature_flavor": "辛、苦，温",
+    "meridian": "归心、胃经",
+    "application": "1. 痰蒙清窍，神昏癫痫；2. 健忘失眠、耳鸣耳聋；3. 湿阻中焦脘痞腹胀、噤口痢",
+    "dosage": "煎服 3～10g；鲜品加倍",
+    "caution": "阴虚阳亢、多汗、滑精者慎用"
+  },
+  {
+    "chapter": "第十八章 涌吐药、拔毒化腐生肌药",
+    "section": "第一节 涌吐药",
+    "name": "常山",
+    "nature_flavor": "苦、辛，寒；有毒",
+    "meridian": "归肺、肝、心经",
+    "application": "1. 各种疟疾；2. 痰饮停聚，胸膈痞塞",
+    "dosage": "煎服 5～9g；治疟酒炙减催吐副作用",
+    "caution": "体虚、孕妇忌服；易致呕吐，不宜空腹服用"
+  },
+  {
+    "chapter": "第十八章 涌吐药、拔毒化腐生肌药",
+    "section": "第一节 涌吐药",
+    "name": "瓜蒂",
+    "nature_flavor": "苦，寒；有毒",
+    "meridian": "归胃经",
+    "application": "1. 痰热郁胸，癫痫发狂；2. 宿食停滞胃脘；3. 湿热黄疸（外用吹鼻）",
+    "dosage": "煎服 2.5～5g；入丸散 0.3～1g；外用少量吹鼻",
+    "caution": "体虚、失血、孕妇、胃病患者禁用；过量易中毒"
+  },
+  {
+    "chapter": "第十八章 涌吐药、拔毒化腐生肌药",
+    "section": "第二节 拔毒化腐生肌药",
+    "name": "炉甘石",
+    "nature_flavor": "甘，平",
+    "meridian": "归肝、脾经",
+    "application": "1. 目赤肿痛、翳膜遮睛、睑缘赤烂；2. 溃疡不敛、湿疮湿疹、皮肤瘙痒",
+    "dosage": "外用适量，水飞点眼或调敷；不作内服",
+    "caution": "专外用，严禁内服"
+  },
+  {
+    "chapter": "第十八章 涌吐药、拔毒化腐生肌药",
+    "section": "第二节 拔毒化腐生肌药",
+    "name": "硼砂",
+    "nature_flavor": "甘、咸，凉",
+    "meridian": "归肺、胃经",
+    "application": "1. 咽喉肿痛、口舌生疮、目赤翳障；2. 痰热咳嗽",
+    "dosage": "外用适量；内服入丸散 1.5～3g，不入汤剂",
+    "caution": "内服不可过量；孕妇慎用"
+  },
+  {
+    "chapter": "第十八章 涌吐药、拔毒化腐生肌药",
+    "section": "第二节 拔毒化腐生肌药",
+    "name": "升药（红粉）",
+    "nature_flavor": "辛，热；有大毒",
+    "meridian": "归肺、脾经",
+    "application": "痈疽溃后，脓出不畅、腐肉不去、新肉难生，专外用拔毒去腐",
+    "dosage": "外用微量，配伍石膏研末掺患处；严禁内服",
+    "caution": "有大毒，不可大量久用；孕妇、体虚者禁用；创面过大慎用防蓄积中毒"
+  }
+]

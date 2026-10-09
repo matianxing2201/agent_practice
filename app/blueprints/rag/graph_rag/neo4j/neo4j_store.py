@@ -42,6 +42,9 @@ class Neo4jStore:
         with self.driver.session() as sess:
             _cypher = cast(LiteralString, cypher)  # 仅类型标记,运行时无副作用
             res: Result = sess.run(_cypher, params)
-            return [rec.data() for rec in res]
+            # 用 dict(rec) 而非 rec.data():
+            # data() 会把 Node/Relationship 序列化成普通 dict,丢失 element_id / type 等图对象属性;
+            # dict(rec) 保留原图对象,rec["键"] 拿到的仍是 Node,可访问 .element_id / rel.type。
+            return [dict(rec) for rec in res]
 
 
