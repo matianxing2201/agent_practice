@@ -19,3 +19,4 @@ from flask import Blueprint
 bp = Blueprint("ollama", __name__, url_prefix="/ollama")
 
 from . import basic_chat  # noqa: E402,F401
+from . import multi_chat_completion  # noqa: E402,F401
