@@ -11,6 +11,8 @@ from flask import Flask
 def register_blueprints(app: Flask) -> None:
     """注册所有主题蓝图。"""
 
+    from .ollama import bp as ollama_bp
     from .rag import bp as rag_bp
 
     app.register_blueprint(rag_bp)
+    app.register_blueprint(ollama_bp)
