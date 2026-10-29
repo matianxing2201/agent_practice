@@ -22,3 +22,4 @@ from . import basic_chat  # noqa: E402,F401
 from . import multi_chat_completion  # noqa: E402,F401
 from . import common_methods  # noqa: E402,F401
 from . import modelfile  # noqa: E402,F401
+from . import rag  # noqa: E402,F401
